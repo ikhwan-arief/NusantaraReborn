@@ -1,0 +1,12 @@
+# Local OJS archives (read-only references, never committed or packaged)
+ojs-*.tar.gz
+build/
+tests/runtime33/.work/
+tests/runtime33/.env
+tests/runtime33/credentials.txt
+tests/reports/
+__pycache__/
+.DS_Store
+
+# Legacy snapshots contain institutional marks; kept local only
+legacy/*.tar.gz

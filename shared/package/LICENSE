@@ -1,0 +1,47 @@
+NUSANTARAREBORN — LICENSING NOTICE
+
+Product: NusantaraReborn (theme for Open Journal Systems)
+Developer and copyright holder: Ikhwan Arief
+Developer contact: ikhwan[at]unand.ac.id
+Copyright (c) 2026 Ikhwan Arief. Copyright held by the application developer.
+
+The developer contact address identifies the theme developer only. It is not the
+identity of any journal or publisher that uses the theme.
+
+1. SOURCE CODE
+
+The source code (PHP, Smarty templates, CSS, JavaScript and locale files) is
+licensed under the GNU General Public License version 3 or any later version
+(GPL-3.0-or-later), to remain compatible with Open Journal Systems. The full
+GPL v3 text is in LICENSE-GPL-3.0.txt.
+
+The GPL permits copying, modification, redistribution and commercial use of the
+covered code under its terms. No non-commercial restriction applies to the code.
+
+2. ORIGINAL DOCUMENTATION AND VISUAL ASSETS
+
+Unless another notice applies, original documentation and original visual assets
+made for this theme (hero backgrounds, ornament patterns, fallback covers) are
+licensed under Creative Commons Attribution-NonCommercial 4.0 International
+(CC BY-NC 4.0): https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+Commercial use of these non-code assets requires prior permission from the
+copyright holder (ikhwan[at]unand.ac.id). This restriction never extends to the
+GPL-licensed code.
+
+3. THIRD-PARTY COMPONENTS
+
+- Templates marked "Derived from ..." adapt Open Journal Systems templates,
+  Copyright (c) 2014-2021 Simon Fraser University and Copyright (c) 2003-2021
+  John Willinsky, distributed under the GNU GPL v3.
+- The theme is a child of the OJS Default Theme and uses the libraries OJS
+  provides (jQuery, Bootstrap dropdown, Font Awesome). They are not bundled here
+  and keep their own licenses.
+- When "Google Fonts" is selected, the font families are served by Google Fonts
+  under the licenses published for those families (SIL Open Font License).
+
+4. JOURNAL CONTENT
+
+Journal names, logos, favicons, policies, articles and metadata shown by the
+theme belong to the respective journals and publishers. The theme claims no
+rights over them.

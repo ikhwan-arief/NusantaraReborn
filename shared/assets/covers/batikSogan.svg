@@ -1,0 +1,17 @@
+<!--
+  Developed by Ikhwan Arief (ikhwan[at]unand.ac.id).
+  Copyright (c) 2026 Ikhwan Arief. Copyright held by the application developer.
+  NusantaraReborn original decorative asset. License: CC BY-NC 4.0.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="980" viewBox="0 0 720 980" aria-hidden="true">
+  <defs>
+    <pattern id="nrMotif" width="48" height="48" patternUnits="userSpaceOnUse"><g fill="none" stroke="#D29A6E" stroke-width="1.6" stroke-linecap="round"><path d="M24 4 C30 12 30 18 24 22 C18 18 18 12 24 4 Z"/><path d="M24 44 C30 36 30 30 24 26 C18 30 18 36 24 44 Z"/><path d="M4 24 C12 18 18 18 22 24 C18 30 12 30 4 24 Z"/><path d="M44 24 C36 18 30 18 26 24 C30 30 36 30 44 24 Z"/></g><circle cx="24" cy="24" r="1.8" fill="#D29A6E"/><circle cx="0" cy="0" r="1.8" fill="#D29A6E"/><circle cx="48" cy="0" r="1.8" fill="#D29A6E"/><circle cx="0" cy="48" r="1.8" fill="#D29A6E"/><circle cx="48" cy="48" r="1.8" fill="#D29A6E"/></pattern>
+    <linearGradient id="nrGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4E2F1E"/><stop offset="1" stop-color="#6B432D"/></linearGradient>
+  </defs>
+  <rect width="720" height="980" fill="#FBF6EC"/>
+  <rect width="720" height="560" fill="url(#nrGrad)"/>
+  <rect width="720" height="560" fill="url(#nrMotif)" opacity=".32"/>
+  <rect x="0" y="560" width="720" height="18" fill="#A7653F"/>
+  <path d="M0 760 C160 700 300 820 450 750 C560 700 640 720 720 690 L720 980 L0 980 Z" fill="#6B432D" opacity=".12"/>
+  <path d="M0 840 C170 790 300 880 460 830 C580 792 650 806 720 782 L720 980 L0 980 Z" fill="#A7653F" opacity=".18"/>
+</svg>

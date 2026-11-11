@@ -1,0 +1,38 @@
+{
+  "_comment": "NusantaraReborn preset tokens. Single source for PHP (copied by build), ornaments, covers and contrast checks.",
+  "zamrudKhatulistiwa": {
+    "primary": "#145A43", "primaryDark": "#0E4030", "primarySoft": "#E7F1EC",
+    "accent": "#8A6421", "accentDark": "#6E4F18", "accentBright": "#A87C2E",
+    "navActiveBg": "#B88A38", "navActiveText": "#1C1608",
+    "pageBg": "#FAF7EF", "surface": "#F3EEE1", "text": "#1F2B26", "muted": "#55625C", "border": "#E2DACA",
+    "fontSerif": "Source Serif 4", "fontSans": "Source Sans 3", "ornament": "leaves", "heroPosition": "60% 50%"
+  },
+  "bahariNusantara": {
+    "primary": "#174A73", "primaryDark": "#103553", "primarySoft": "#E6EFF5",
+    "accent": "#136A6E", "accentDark": "#0E5154", "accentBright": "#167C80",
+    "navActiveBg": "#167C80", "navActiveText": "#FFFFFF",
+    "pageBg": "#F8FAF7", "surface": "#EDF3F2", "text": "#1B2A36", "muted": "#51606B", "border": "#D6E1E3",
+    "fontSerif": "Noto Serif", "fontSans": "Noto Sans", "ornament": "waves", "heroPosition": "60% 50%"
+  },
+  "batikSogan": {
+    "primary": "#6B432D", "primaryDark": "#4E2F1E", "primarySoft": "#F3EAE1",
+    "accent": "#8E5332", "accentDark": "#723F24", "accentBright": "#A7653F",
+    "navActiveBg": "#A7653F", "navActiveText": "#FFFFFF",
+    "pageBg": "#FBF6EC", "surface": "#F4EBDB", "text": "#2E2119", "muted": "#64554B", "border": "#E5D7C3",
+    "fontSerif": "Source Serif 4", "fontSans": "Source Sans 3", "ornament": "geometri", "heroPosition": "60% 50%"
+  },
+  "merahPutih": {
+    "primary": "#A52834", "primaryDark": "#7A1C26", "primarySoft": "#F8E9EA",
+    "accent": "#A52834", "accentDark": "#7A1C26", "accentBright": "#C23B47",
+    "navActiveBg": "#FFFFFF", "navActiveText": "#7A1C26",
+    "pageBg": "#FFFFFF", "surface": "#F6F6F7", "text": "#252A32", "muted": "#555B66", "border": "#E1E2E6",
+    "fontSerif": "Noto Serif", "fontSans": "Noto Sans", "ornament": "lines", "heroPosition": "60% 50%"
+  },
+  "tenunSenja": {
+    "primary": "#373D70", "primaryDark": "#272C55", "primarySoft": "#ECEDF6",
+    "accent": "#9A4630", "accentDark": "#7B3725", "accentBright": "#A94F37",
+    "navActiveBg": "#A94F37", "navActiveText": "#FFFFFF",
+    "pageBg": "#FBF4EA", "surface": "#F3E9DB", "text": "#26283A", "muted": "#5A5A6C", "border": "#E6DACA",
+    "fontSerif": "Source Serif 4", "fontSans": "Source Sans 3", "ornament": "tenun", "heroPosition": "60% 50%"
+  }
+}

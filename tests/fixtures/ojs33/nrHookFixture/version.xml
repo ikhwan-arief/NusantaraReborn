@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
+<!-- TEST FIXTURE ONLY. Developed by Ikhwan Arief (ikhwan[at]unand.ac.id). Copyright (c) 2026 Ikhwan Arief. -->
+<version>
+	<application>nrHookFixture</application>
+	<type>plugins.generic</type>
+	<release>1.0.0.0</release>
+	<date>2026-11-11</date>
+	<lazy-load>1</lazy-load>
+	<class>NrHookFixturePlugin</class>
+</version>
