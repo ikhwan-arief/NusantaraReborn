@@ -182,7 +182,7 @@
 						<h2 class="nr_title">{$nrEditorInChiefRole|escape}</h2>
 						<div class="nr_editor_profile">
 							{if $nrEditorInChiefPhoto}
-								<img class="nr_editor_photo" src="{$nrEditorInChiefPhoto|escape}" alt="{$nrEditorInChiefName|escape}" loading="lazy">
+								<img class="nr_editor_photo" src="{$nrEditorInChiefPhoto|escape}" alt="{$nrEditorInChiefName|escape}" loading="lazy" referrerpolicy="no-referrer">
 							{else}
 								<div class="nr_editor_photo nr_editor_avatar" aria-hidden="true"><span class="fa fa-user"></span></div>
 							{/if}

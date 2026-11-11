@@ -84,7 +84,7 @@ Setiap baris hanya tampil bila diisi. Kotak hilang bila semua baris kosong.
 | **Nama Editor-in-Chief** | Nama lengkap dengan gelar. **Kosongkan untuk menyembunyikan seluruh kartu.** |
 | **Label jabatan** | Misalnya *Pemimpin Redaksi*. Jika kosong: *Editor-in-Chief*. |
 | **Afiliasi** | Institusi editor. |
-| **URL foto** | Unggah foto potret (rasio sekitar 4:5) melalui pustaka berkas OJS atau tempat lain yang aman, lalu tempel alamat `https://`. Jika kosong, tampil ikon. |
+| **URL foto** | Unggah foto potret (rasio sekitar 4:5) melalui pustaka berkas OJS atau tempat lain yang aman, lalu tempel alamat `https://`. Alamat `http://` diabaikan. Jika kosong, tampil ikon. |
 | **Biografi singkat** | 2–3 kalimat, tanpa format HTML. |
 
 ### Halaman artikel
@@ -92,6 +92,7 @@ Setiap baris hanya tampil bila diisi. Kotak hilang bila semua baris kosong.
 | Isian | Arti |
 |---|---|
 | **Email penulis korespondensi** | Bawaan: *Sembunyikan*. Pilih *Tampilkan* hanya bila penulis telah menyetujui alamat emailnya dipublikasikan. |
+| **Tanggal editorial** | Bawaan: *Tampilkan*. Menampilkan tanggal dikirim, direvisi, dan diterima pada artikel terbit (tanpa identitas editor/penelaah). Pilih *Sembunyikan* bila jurnal tidak ingin mempublikasikannya. |
 
 ---
 
@@ -137,6 +138,8 @@ Baris terakhir yang berisi nama negara otomatis diberi bendera. Tanpa JavaScript
 ### Format Custom Page kebijakan
 
 Gunakan **Heading 2** untuk setiap bagian (minimal dua). Theme membuat daftar *Di halaman ini*, menomori bagian, dan memberi ikon. Kutipan (*blockquote*) ditampilkan sebagai kotak catatan, dan daftar berpoin dengan 6 butir atau lebih dibagi menjadi dua kolom.
+
+Catatan keamanan: isi Dewan Redaksi, Custom Page, dan ketentuan lisensi disaring dengan HTMLPurifier bawaan OJS. Yang diizinkan: daftar `allowed_html` di `config.inc.php` ditambah heading, tabel, dan kutipan. `<script>`, `<iframe>`, atribut `style`, dan atribut seperti `onclick` selalu dibuang, jadi video atau widget tidak dapat disematkan di halaman-halaman ini; gunakan tautan biasa.
 
 ---
 

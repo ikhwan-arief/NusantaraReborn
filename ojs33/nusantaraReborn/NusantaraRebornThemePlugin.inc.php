@@ -167,6 +167,17 @@ class NusantaraRebornThemePlugin extends ThemePlugin
             'default' => 'hide',
         ]);
 
+        $this->addOption('showEditorialDates', 'FieldOptions', [
+            'type' => 'radio',
+            'label' => __('plugins.themes.nusantaraReborn.option.showEditorialDates.label'),
+            'description' => __('plugins.themes.nusantaraReborn.option.showEditorialDates.description'),
+            'options' => [
+                ['value' => 'show', 'label' => __('plugins.themes.nusantaraReborn.option.show')],
+                ['value' => 'hide', 'label' => __('plugins.themes.nusantaraReborn.option.hide')],
+            ],
+            'default' => 'show',
+        ]);
+
         foreach (['socialWebsite', 'socialInstagram', 'socialYoutube', 'socialLinkedin', 'socialX', 'termsUrl'] as $name) {
             $this->addOption($name, 'FieldText', [
                 'label' => __('plugins.themes.nusantaraReborn.option.' . $name . '.label'),
@@ -338,7 +349,7 @@ class NusantaraRebornThemePlugin extends ThemePlugin
                 'nrEditorInChiefName' => trim((string) $this->getOption('editorInChiefName')),
                 'nrEditorInChiefRole' => $this->localizedOption('editorInChiefRole', $locale) ?: __('plugins.themes.nusantaraReborn.home.editorInChief'),
                 'nrEditorInChiefAffiliation' => $this->localizedOption('editorInChiefAffiliation', $locale),
-                'nrEditorInChiefPhoto' => $this->safeUrl($this->getOption('editorInChiefPhoto')),
+                'nrEditorInChiefPhoto' => $this->safeUrl($this->getOption('editorInChiefPhoto'), ['https']),
                 'nrEditorInChiefBio' => $this->localizedOption('editorInChiefBio', $locale),
             ];
         }
@@ -383,6 +394,7 @@ class NusantaraRebornThemePlugin extends ThemePlugin
             case 'frontend/pages/article.tpl':
                 $article = $templateMgr->getTemplateVars('article');
                 $publication = $templateMgr->getTemplateVars('publication');
+                $templateMgr->assign('nrLicenseTerms', $this->richHtml((string) $context->getLocalizedData('licenseTerms')));
                 if ($article && $publication) {
                     $templateMgr->assign($this->buildArticleData(
                         $context,
@@ -401,6 +413,10 @@ class NusantaraRebornThemePlugin extends ThemePlugin
                 }
                 break;
 
+            case 'frontend/pages/navigationMenuItemViewContent.tpl':
+                $templateMgr->assign('nrPageContent', $this->richHtml((string) $templateMgr->getTemplateVars('content')));
+                break;
+
             case 'frontend/pages/editorialTeam.tpl':
                 $html = trim((string) $context->getLocalizedData('editorialTeam'));
                 $intro = '';
@@ -410,7 +426,7 @@ class NusantaraRebornThemePlugin extends ThemePlugin
                 }
                 $templateMgr->assign([
                     'nrEditorialIntro' => $intro,
-                    'nrEditorialBody' => $html,
+                    'nrEditorialBody' => $this->richHtml($html),
                     'nrCountryMapJson' => json_encode($this->countryNameMap(), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE),
                 ]);
                 break;
@@ -520,7 +536,7 @@ class NusantaraRebornThemePlugin extends ThemePlugin
             'nrAffiliations' => $affiliations,
             'nrCorresponding' => $corresponding,
             // Editorial milestone dates are shown for published versions only.
-            'nrDates' => $isPublished ? $this->editorialDates($article, $publication) : [],
+            'nrDates' => ($isPublished && $this->getOption('showEditorialDates') !== 'hide') ? $this->editorialDates($article, $publication) : [],
             'nrGalley' => $galley,
             'nrGalleySize' => $galley ? $this->galleyFileSize($galley) : '',
             'nrViews' => number_format((int) $article->getViews()),
@@ -1140,6 +1156,36 @@ class NusantaraRebornThemePlugin extends ThemePlugin
         return strlen($text) > $limit ? rtrim(substr($text, 0, $limit - 3)) . '...' : $text;
     }
 
+    /**
+     * Sanitise journal-manager HTML (Editorial Team, Custom Pages, license terms) with the
+     * HTMLPurifier instance OJS ships. The allowlist is the server's [security] allowed_html plus
+     * structural tags these pages rely on (headings, tables, blockquote). Scripts, iframes, style
+     * and event attributes are always removed. Security audit T-1.
+     */
+    protected function richHtml($html)
+    {
+        static $purifier = null;
+        $html = (string) $html;
+        if (trim($html) === '') {
+            return '';
+        }
+        if ($purifier === null) {
+            $allowed = trim((string) Config::getVar('security', 'allowed_html'));
+            $extra = 'h2,h3,h4,h5,h6,blockquote,hr,span,div,small,abbr[title],'
+                . 'table,caption,thead,tbody,tfoot,tr,th[colspan|rowspan|scope],td[colspan|rowspan],'
+                . 'a[href|target|title|rel],img[src|alt|width|height]';
+            $config = HTMLPurifier_Config::createDefault();
+            $config->set('Core.Encoding', 'UTF-8');
+            $config->set('HTML.Doctype', 'HTML 4.01 Transitional');
+            $config->set('HTML.Allowed', ($allowed !== '' ? $allowed . ',' : '') . $extra);
+            $config->set('Attr.AllowedFrameTargets', ['_blank']);
+            $config->set('URI.AllowedSchemes', ['http' => true, 'https' => true, 'mailto' => true, 'tel' => true]);
+            $config->set('Cache.SerializerPath', 'cache');
+            $purifier = new HTMLPurifier($config);
+        }
+        return $purifier->purify($html);
+    }
+
     protected function html($value)
     {
         return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
@@ -1148,13 +1194,13 @@ class NusantaraRebornThemePlugin extends ThemePlugin
     /**
      * Accept only absolute http(s) URLs; anything else (javascript:, data:, relative) is dropped.
      */
-    protected function safeUrl($value)
+    protected function safeUrl($value, $schemes = ['http', 'https'])
     {
         $value = trim((string) $value);
         if ($value === '' || !filter_var($value, FILTER_VALIDATE_URL)) {
             return '';
         }
-        return in_array(strtolower((string) parse_url($value, PHP_URL_SCHEME)), ['http', 'https'], true) ? $value : '';
+        return in_array(strtolower((string) parse_url($value, PHP_URL_SCHEME)), $schemes, true) ? $value : '';
     }
 
     /**

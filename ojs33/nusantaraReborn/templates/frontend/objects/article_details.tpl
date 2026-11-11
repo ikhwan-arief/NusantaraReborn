@@ -243,7 +243,7 @@
 							<a href="{$publication->getData('licenseUrl')|escape}" rel="license">{translate key="plugins.themes.nusantaraReborn.article.viewLicense"} <span class="fa fa-arrow-right" aria-hidden="true"></span></a>
 						</div>
 					{/if}
-					{$currentContext->getLocalizedData('licenseTerms')}
+					{$nrLicenseTerms}
 				</section>
 			{/if}
 

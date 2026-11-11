@@ -28,7 +28,7 @@
 	</aside>
 	<div class="page nr_policy_page">
 		<h1 class="page_title nr_title">{$title|escape}</h1>
-		{$content}
+		{$nrPageContent}
 	</div>
 </div>
 

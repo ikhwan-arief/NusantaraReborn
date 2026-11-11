@@ -254,7 +254,7 @@ msgid "plugins.themes.nusantaraReborn.option.editorInChiefName.label"
 msgstr "Editor-in-Chief name (homepage)"
 
 msgid "plugins.themes.nusantaraReborn.option.editorInChiefPhoto.description"
-msgstr "An https:// photo address. Leave empty to show an icon."
+msgstr "A photo address starting with https:// (http:// is ignored). Leave empty to show an icon."
 
 msgid "plugins.themes.nusantaraReborn.option.editorInChiefPhoto.label"
 msgstr "Editor-in-Chief photo URL"
@@ -384,6 +384,12 @@ msgstr "Default: hidden. Show only when authors agreed to publish their email ad
 
 msgid "plugins.themes.nusantaraReborn.option.showCorrespondingEmail.label"
 msgstr "Corresponding author email on article pages"
+
+msgid "plugins.themes.nusantaraReborn.option.showEditorialDates.description"
+msgstr "Shows the received, revised and accepted dates on published articles. Only dates are published; editor and reviewer identities are never shown."
+
+msgid "plugins.themes.nusantaraReborn.option.showEditorialDates.label"
+msgstr "Editorial dates on article pages"
 
 msgid "plugins.themes.nusantaraReborn.option.socialInstagram.label"
 msgstr "Follow us: Instagram URL"

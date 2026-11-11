@@ -1,5 +1,13 @@
 # Changelog — NusantaraReborn (OJS 3.3 track)
 
+## 1.0.2.0 — 2026-11-11
+
+Security hardening from docs/SECURITY-AUDIT-OJS33.md.
+
+- T-1: Editorial Team text, Custom Pages and license terms are sanitised with the HTMLPurifier bundled in OJS. Allowlist = server `allowed_html` + headings, tables, blockquote. Scripts, iframes, `style` and event attributes are removed. (Plain `strip_unsafe_html` was rejected: the default OJS 3.3 allowlist drops headings and breaks these pages.)
+- T-2: New option "Editorial dates on article pages" (show/hide, default show).
+- T-3: Editor-in-Chief photo accepts https:// only and is loaded with `referrerpolicy="no-referrer"`. `safeUrl()` takes an optional scheme list.
+
 ## 1.0.1.0 — 2026-11-11
 
 - Site-level pages (journal list without a journal context) show the OJS site title; the footer stays at the bottom of short pages.
