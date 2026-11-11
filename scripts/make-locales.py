@@ -220,7 +220,11 @@ def main():
             "",
         ]
         for key in sorted(S):
-            lines += [f'msgid "{P}{key}"', f'msgstr "{esc(S[key][col])}"', ""]
+            value = S[key][col]
+            if track == "35":
+                # OJS 3.4+ treats a translate parameter named "count" as a plural selector.
+                value = value.replace("{$count}", "{$num}")
+            lines += [f'msgid "{P}{key}"', f'msgstr "{esc(value)}"', ""]
         os.makedirs(os.path.join(base, locale), exist_ok=True)
         with open(os.path.join(base, locale, "locale.po"), "w", encoding="utf-8") as f:
             f.write("\n".join(lines))

@@ -4,10 +4,12 @@
 import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
-RUNTIME = os.path.join(ROOT, "tests", "runtime33")
-BASE = os.environ.get("NR_BASE", "http://localhost:8099/index.php")
-JOURNAL = "nusantara"
-SHOTS = os.path.join(ROOT, "tests", "reports", "ojs33", "screenshots")
+TRACK = os.environ.get("NR_TRACK", "33")
+RUNTIME = os.path.join(ROOT, "tests", "runtime" + TRACK)
+BASE = os.environ.get("NR_BASE", "http://localhost:" + ("8100" if TRACK == "35" else "8099") + "/index.php")
+# OJS 3.5 URLs carry the locale after the journal path.
+JOURNAL = "nusantara/en" if TRACK == "35" else "nusantara"
+SHOTS = os.path.join(ROOT, "tests", "reports", "ojs" + TRACK, "screenshots")
 LAUNCH = {"channel": "chrome", "headless": True}
 
 

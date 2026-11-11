@@ -995,3 +995,70 @@ body.nr_theme .cmp_skip_to_content a:focus { background: var(--nr-card); color: 
 /* Short pages (site index, empty journals): keep the footer at the bottom of the viewport. */
 body.nr_theme .pkp_structure_page { display: flex; flex-direction: column; min-height: 100vh; }
 body.nr_theme .pkp_structure_page > .nr_footer { margin-top: auto; }
+
+/* =====================================================================
+ * OJS 3.5 components (no effect on OJS 3.3 markup): editorial masthead and
+ * history, homepage highlights, usage statistics chart, ROR/ORCID marks,
+ * data availability, author user groups.
+ * ===================================================================== */
+.nr_theme .page_masthead h1 { color: var(--nr-ink); font-family: var(--nr-font-serif); }
+.nr_theme .page_masthead h2 {
+    position: relative;
+    margin: 28px 0 12px;
+    padding-left: 16px;
+    color: var(--nr-ink);
+    font-family: var(--nr-font-serif);
+    font-size: 1.4rem;
+}
+.nr_theme .page_masthead h2::before { content: ""; position: absolute; left: 0; top: .14em; bottom: .14em; width: 5px; background: var(--nr-accent-bright); }
+.nr_theme .page_masthead .user_listing {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+    margin: 0 0 8px;
+    padding: 0;
+    list-style: none;
+}
+.nr_theme .page_masthead .user_listing > li {
+    margin: 0;
+    padding: 12px 14px;
+    background: var(--nr-card);
+    border: 1px solid var(--nr-border);
+    border-left: 4px solid var(--nr-accent-bright);
+    border-radius: 4px;
+}
+.nr_theme .page_masthead .user_listing .name { display: block; color: var(--nr-ink); font-family: var(--nr-font-serif); font-weight: 700; }
+.nr_theme .page_masthead .user_listing .affiliation,
+.nr_theme .page_masthead .user_listing .date_start { display: block; color: var(--nr-muted); font-size: .88rem; }
+.nr_theme .page_masthead .user_listing .orcid { display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; font-size: .84rem; }
+.nr_theme .page_masthead .user_listing .orcid svg,
+.nr_theme .nr_orcid_link svg,
+.nr_theme .nr_ror svg { width: 16px; height: 16px; vertical-align: -3px; }
+
+.nr_highlights { padding-top: 22px; }
+.nr_theme .nr_highlights .highlights { margin: 0; }
+.nr_theme .nr_highlights .swiper { border-radius: 6px; overflow: hidden; background: var(--nr-surface); }
+.nr_theme .nr_highlights .swiper-slide-title { color: var(--nr-ink); font-family: var(--nr-font-serif); }
+.nr_theme .nr_highlights .swiper-slide-desc { color: var(--nr-text); }
+.nr_theme .nr_highlights .swiper-slide-button { background: var(--nr-accent); border-color: var(--nr-accent); color: #fff; }
+.nr_theme .nr_highlights .swiper-pagination-bullet-active { background: var(--nr-accent-bright); }
+.nr_theme .nr_highlights .swiper-button-prev,
+.nr_theme .nr_highlights .swiper-button-next { color: var(--nr-primary-dark); }
+
+.nr_stats_chart { margin: 0 0 22px; }
+.nr_stats_chart canvas { max-width: 100%; }
+.nr_stats_chart .usageStatsUnavailable { color: var(--nr-muted); font-size: .9rem; }
+
+.nr_orcid_link { display: inline-flex; align-self: center; margin-left: 6px; text-decoration: none; }
+.nr_ror { display: inline-flex; margin-left: 4px; text-decoration: none; }
+.nr_user_group { margin-left: 6px; color: var(--nr-muted); font-size: .85rem; font-weight: 400; }
+.nr_more_galleys { margin: 0 0 12px; padding: 0; list-style: none; display: grid; gap: 6px; }
+.nr_side_buttons.is-single { grid-template-columns: minmax(0, 1fr); }
+.nr_data_availability { margin-bottom: 24px !important; padding: 16px 20px !important; border: 1px solid var(--nr-border) !important; border-radius: 6px; }
+.nr_data_availability .value { color: var(--nr-text); font-size: .95rem; line-height: 1.6; }
+
+/* CSL block inserted by the Citation Style Language plugin into the side column (OJS 3.5). */
+.nr_theme .nr_article_side .item.citation { padding: 18px 22px; border-radius: 6px; background: var(--nr-box); }
+.nr_theme .nr_article_side .item.citation h2.label { margin: 0 0 10px; color: var(--nr-ink); font-family: var(--nr-font-serif); font-size: 1.3rem; font-weight: 700; }
+body.nr_theme .nr_article_side .item.citation .citation_formats_button { width: auto; margin-top: 10px; padding: 4px 26px 4px 10px; border: 1px solid var(--nr-box-line); border-radius: 3px; background: var(--nr-card); color: var(--nr-muted); font-family: var(--nr-font-ui); font-size: .8rem; font-weight: 500; }
+.nr_theme .nr_article_side #citationOutput { color: var(--nr-text); font-size: .86rem; line-height: 1.5; overflow-wrap: anywhere; }

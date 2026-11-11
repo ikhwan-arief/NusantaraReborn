@@ -4,12 +4,17 @@
 #
 # Build an installable NusantaraReborn package from an explicit allowlist.
 #   scripts/build.sh 33     -> build/ojs33/nusantaraReborn (staging) + dist/ojs33/nusantaraReborn-<version>.tar.gz
+#   scripts/build.sh 35     -> build/ojs35/nusantaraReborn (staging) + dist/ojs35/nusantaraReborn-<version>.tar.gz
 # The staging folder is also what the local Docker test stack mounts.
 # No dependency installation, no network access.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TRACK="${1:-33}"
-[ "$TRACK" = "33" ] || { echo "Only track 33 is implemented so far." >&2; exit 2; }
+case "$TRACK" in
+  33) PLUGIN_PHP="NusantaraRebornThemePlugin.inc.php" ;;
+  35) PLUGIN_PHP="NusantaraRebornThemePlugin.php" ;;
+  *) echo "Unknown track: $TRACK (use 33 or 35)" >&2; exit 2 ;;
+esac
 SRC="$ROOT/ojs$TRACK/nusantaraReborn"
 STAGE="$ROOT/build/ojs$TRACK/nusantaraReborn"
 VERSION="$(sed -n 's:.*<release>\(.*\)</release>.*:\1:p' "$SRC/version.xml")"
@@ -23,7 +28,7 @@ rm -rf "$STAGE"
 mkdir -p "$STAGE"/{styles,js,assets/heroes,assets/covers,assets/ornaments}
 
 # Version-specific runtime files.
-cp "$SRC/index.php" "$SRC/NusantaraRebornThemePlugin.inc.php" "$SRC/version.xml" "$STAGE/"
+cp "$SRC/index.php" "$SRC/$PLUGIN_PHP" "$SRC/version.xml" "$STAGE/"
 cp -R "$SRC/templates" "$SRC/locale" "$STAGE/"
 cp "$SRC/README.md" "$SRC/CHANGELOG.md" "$STAGE/"
 

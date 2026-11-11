@@ -1,6 +1,6 @@
 # Panduan Pengaturan NusantaraReborn
 
-Untuk pengelola jurnal (Journal Manager) pada OJS 3.3. Developed by Ikhwan Arief (ikhwan[at]unand.ac.id). Copyright (c) 2026 Ikhwan Arief. Dokumentasi: CC BY-NC 4.0.
+Untuk pengelola jurnal (Journal Manager) pada OJS 3.3 (NusantaraReborn 1.x) dan OJS 3.5 (NusantaraReborn 2.x). Perbedaan khusus OJS 3.5 ada di bagian 4. Developed by Ikhwan Arief (ikhwan[at]unand.ac.id). Copyright (c) 2026 Ikhwan Arief. Dokumentasi: CC BY-NC 4.0.
 
 Panduan ini menjelaskan arti setiap isian di pengaturan theme dan pengaturan OJS lain yang memengaruhi tampilan. Prinsipnya: **isian yang kosong disembunyikan**. Theme tidak pernah mengisi teks contoh, klaim peer review, akses terbuka, indeksasi, atau identitas institusi. Jadi isi hanya hal yang benar untuk jurnal Anda.
 
@@ -143,7 +143,19 @@ Catatan keamanan: isi Dewan Redaksi, Custom Page, dan ketentuan lisensi disaring
 
 ---
 
-## 4. Daftar periksa sebelum situs dipublikasikan
+## 4. Khusus OJS 3.5 (NusantaraReborn 2.x)
+
+| Hal | Penjelasan |
+|---|---|
+| **Statistik penggunaan** | Opsi *Statistik penggunaan* (Nonaktif/Batang/Garis) berasal dari Default Theme dan tetap tersedia di pengaturan theme. Bila aktif, grafik unduhan tampil di halaman artikel. Angka *Dilihat* dan *Unduhan* di kotak Informasi Artikel diambil dari statistik OJS. |
+| **Dewan Redaksi (Masthead)** | Di OJS 3.5 halaman ini dibentuk dari **peran pengguna**, bukan dari teks HTML. Atur di *Pengguna & Peran*: aktifkan *Tampilkan di masthead* pada peran, lalu beri pengguna peran tersebut beserta tanggal mulai. Theme hanya menata tampilannya; riwayat editorial (*Editorial History*) juga ikut tertata. Format HTML Dewan Redaksi di bagian 3 hanya berlaku untuk OJS 3.3. |
+| **Highlights** | Fitur beranda baru OJS 3.5 (*Pengaturan > Situs Web > Highlights*). Bila diisi, slider tampil di bawah hero. |
+| **Afiliasi dan ROR** | Penulis dapat memiliki beberapa afiliasi. Afiliasi yang dipilih dari daftar ROR otomatis bernama sesuai registri ROR dan diberi tautan ROR. Afiliasi ganda dinomori di halaman artikel. |
+| **Pernyataan ketersediaan data** | Bila diisi pada metadata publikasi, tampil sebagai bagian tersendiri di halaman artikel. |
+| **Cara mengutip (CSL)** | Kotak *Cara Mengutip* disisipkan oleh plugin Citation Style Language di kolom samping artikel. Aktifkan plugin tersebut agar tampil. |
+| **Upgrade dari OJS 3.3** | Ikuti upgrade resmi OJS, lalu ganti seluruh folder `plugins/themes/nusantaraReborn` dengan paket 2.x. Pengaturan theme tetap terbawa. Teks multibahasa yang diisi di OJS 3.3 tetap tampil di situs dan di form pengaturan theme: theme mengenali kode bahasa lama (`id_ID`→`id`, `en_US`→`en`). Simpan form pengaturan theme sekali setelah upgrade agar teks tersimpan dengan kode bahasa baru, lalu periksa setiap bahasa. |
+
+## 5. Daftar periksa sebelum situs dipublikasikan
 
 - [ ] Menu dibuat lengkap di **Navigasi**, tanpa item "Beranda" ganda.
 - [ ] Logo, favicon, dan Homepage Image (opsional) terunggah dengan teks alternatif.
@@ -158,4 +170,4 @@ Catatan keamanan: isi Dewan Redaksi, Custom Page, dan ketentuan lisensi disaring
 
 ## English summary
 
-Every theme field may be left empty; empty elements are hidden and never replaced by sample text or claims. **Build all menus in Settings > Website > Setup > Navigation** (Primary and User Navigation Menus); the theme adds the Home link itself. Journal identity (name, logo, favicon, homepage image, description, ISSN, publisher, contact) comes from OJS settings. Use Heading 2 + bulleted lists in the Editorial Team text and Heading 2 sections in policy Custom Pages to get the enhanced layouts.
+Applies to OJS 3.3 (1.x) and OJS 3.5 (2.x). Every theme field may be left empty; empty elements are hidden and never replaced by sample text or claims. **Build all menus in Settings > Website > Setup > Navigation** (Primary and User Navigation Menus); the theme adds the Home link itself. Journal identity (name, logo, favicon, homepage image, description, ISSN, publisher, contact) comes from OJS settings. Use Heading 2 + bulleted lists in the Editorial Team text (OJS 3.3 only) and Heading 2 sections in policy Custom Pages to get the enhanced layouts. On OJS 3.5 the masthead comes from user roles, Highlights appear below the hero, affiliations show ROR links, and the usage chart follows the Default Theme's statistics option.
