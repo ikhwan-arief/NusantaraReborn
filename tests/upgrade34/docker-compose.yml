@@ -1,0 +1,27 @@
+# Developed by Ikhwan Arief (ikhwan[at]unand.ac.id).
+# Copyright (c) 2026 Ikhwan Arief. Copyright held by the application developer.
+# LOCAL TEST STACK ONLY: upgrade fixture. A copy of the OJS 3.3 test stack (database + files) is
+# upgraded to OJS 3.4.0-12 here — http://localhost:8103. The 3.3 stack itself is never modified.
+name: nr34up-test
+services:
+  db:
+    image: mariadb:10.11
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ojs
+      MARIADB_USER: ojs
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    volumes:
+      - dbdata:/var/lib/mysql
+  web:
+    build: ../runtime34
+    depends_on: [db]
+    ports:
+      - "127.0.0.1:8103:80"
+    volumes:
+      - ./.work/ojs:/var/www/html
+      - ./.work/files:/var/www/files
+      - ./.work/logs:/var/log/apache2
+volumes:
+  dbdata:

@@ -4,6 +4,7 @@
 #
 # Build an installable NusantaraReborn package from an explicit allowlist.
 #   scripts/build.sh 33     -> build/ojs33/nusantaraReborn (staging) + dist/ojs33/nusantaraReborn-<version>.tar.gz
+#   scripts/build.sh 34     -> build/ojs34/nusantaraReborn (staging) + dist/ojs34/nusantaraReborn-<version>.tar.gz
 #   scripts/build.sh 35     -> build/ojs35/nusantaraReborn (staging) + dist/ojs35/nusantaraReborn-<version>.tar.gz
 # The staging folder is also what the local Docker test stack mounts.
 # No dependency installation, no network access.
@@ -12,8 +13,8 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TRACK="${1:-33}"
 case "$TRACK" in
   33) PLUGIN_PHP="NusantaraRebornThemePlugin.inc.php" ;;
-  35) PLUGIN_PHP="NusantaraRebornThemePlugin.php" ;;
-  *) echo "Unknown track: $TRACK (use 33 or 35)" >&2; exit 2 ;;
+  34|35) PLUGIN_PHP="NusantaraRebornThemePlugin.php" ;;
+  *) echo "Unknown track: $TRACK (use 33, 34 or 35)" >&2; exit 2 ;;
 esac
 SRC="$ROOT/ojs$TRACK/nusantaraReborn"
 STAGE="$ROOT/build/ojs$TRACK/nusantaraReborn"

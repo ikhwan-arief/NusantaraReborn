@@ -1,6 +1,6 @@
 # Panduan Pengaturan NusantaraReborn
 
-Untuk pengelola jurnal (Journal Manager) pada OJS 3.3 (NusantaraReborn 1.x) dan OJS 3.5 (NusantaraReborn 2.x). Perbedaan khusus OJS 3.5 ada di bagian 4. Developed by Ikhwan Arief (ikhwan[at]unand.ac.id). Copyright (c) 2026 Ikhwan Arief. Dokumentasi: CC BY-NC 4.0.
+Untuk pengelola jurnal (Journal Manager) pada OJS 3.3 (NusantaraReborn 1.x), OJS 3.4 (3.x), dan OJS 3.5 (2.x). Perbedaan khusus OJS 3.4/3.5 ada di bagian 4. Developed by Ikhwan Arief (ikhwan[at]unand.ac.id). Copyright (c) 2026 Ikhwan Arief. Dokumentasi: CC BY-NC 4.0.
 
 Panduan ini menjelaskan arti setiap isian di pengaturan theme dan pengaturan OJS lain yang memengaruhi tampilan. Prinsipnya: **isian yang kosong disembunyikan**. Theme tidak pernah mengisi teks contoh, klaim peer review, akses terbuka, indeksasi, atau identitas institusi. Jadi isi hanya hal yang benar untuk jurnal Anda.
 
@@ -143,7 +143,11 @@ Catatan keamanan: isi Dewan Redaksi, Custom Page, dan ketentuan lisensi disaring
 
 ---
 
-## 4. Khusus OJS 3.5 (NusantaraReborn 2.x)
+## 4. Khusus OJS 3.4 (NusantaraReborn 3.x) dan OJS 3.5 (NusantaraReborn 2.x)
+
+**OJS 3.4:** sama dengan tabel di bawah, kecuali: (a) Dewan Redaksi masih diisi sebagai teks HTML di Pengaturan > Jurnal dengan format pada bagian 3; (b) tidak ada Highlights; (c) afiliasi penulis berupa satu teks tanpa ROR; (d) ORCID berasal dari plugin ORCID Profile.
+
+**OJS 3.5:**
 
 | Hal | Penjelasan |
 |---|---|
@@ -153,7 +157,7 @@ Catatan keamanan: isi Dewan Redaksi, Custom Page, dan ketentuan lisensi disaring
 | **Afiliasi dan ROR** | Penulis dapat memiliki beberapa afiliasi. Afiliasi yang dipilih dari daftar ROR otomatis bernama sesuai registri ROR dan diberi tautan ROR. Afiliasi ganda dinomori di halaman artikel. |
 | **Pernyataan ketersediaan data** | Bila diisi pada metadata publikasi, tampil sebagai bagian tersendiri di halaman artikel. |
 | **Cara mengutip (CSL)** | Kotak *Cara Mengutip* disisipkan oleh plugin Citation Style Language di kolom samping artikel. Aktifkan plugin tersebut agar tampil. |
-| **Upgrade dari OJS 3.3** | Ikuti upgrade resmi OJS, lalu ganti seluruh folder `plugins/themes/nusantaraReborn` dengan paket 2.x. Pengaturan theme tetap terbawa. Teks multibahasa yang diisi di OJS 3.3 tetap tampil di situs dan di form pengaturan theme: theme mengenali kode bahasa lama (`id_ID`→`id`, `en_US`→`en`). Simpan form pengaturan theme sekali setelah upgrade agar teks tersimpan dengan kode bahasa baru, lalu periksa setiap bahasa. |
+| **Upgrade dari OJS 3.3** | Ikuti upgrade resmi OJS, lalu ganti seluruh folder `plugins/themes/nusantaraReborn` dengan paket 3.x (OJS 3.4) atau 2.x (OJS 3.5). Pengaturan theme tetap terbawa. Teks multibahasa yang diisi di OJS 3.3 tetap tampil di situs dan di form pengaturan theme: theme mengenali kode bahasa lama (`id_ID`→`id`, `en_US`→`en`). Simpan form pengaturan theme sekali setelah upgrade agar teks tersimpan dengan kode bahasa baru, lalu periksa setiap bahasa. |
 
 ## 5. Daftar periksa sebelum situs dipublikasikan
 

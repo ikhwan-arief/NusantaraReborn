@@ -6,7 +6,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 TRACK = os.environ.get("NR_TRACK", "33")
 RUNTIME = os.path.join(ROOT, "tests", "runtime" + TRACK)
-BASE = os.environ.get("NR_BASE", "http://localhost:" + ("8100" if TRACK == "35" else "8099") + "/index.php")
+PORTS = {"33": "8099", "34": "8102", "35": "8100"}
+BASE = os.environ.get("NR_BASE", "http://localhost:" + PORTS[TRACK] + "/index.php")
 # OJS 3.5 URLs carry the locale after the journal path.
 JOURNAL = "nusantara/en" if TRACK == "35" else "nusantara"
 SHOTS = os.path.join(ROOT, "tests", "reports", "ojs" + TRACK, "screenshots")

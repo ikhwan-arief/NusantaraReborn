@@ -4,6 +4,7 @@
 """Write the NusantaraReborn locale files from one table of Indonesian/English strings.
 
   python3 -I scripts/make-locales.py 33   -> ojs33/nusantaraReborn/locale/{id_ID,en_US}/locale.po
+  python3 -I scripts/make-locales.py 34   -> ojs34/nusantaraReborn/locale/{id,en}/locale.po
   python3 -I scripts/make-locales.py 35   -> ojs35/nusantaraReborn/locale/{id,en}/locale.po
 """
 import os, sys
@@ -194,7 +195,7 @@ S = {
     "footer.themeCredit": ("Theme NusantaraReborn", "NusantaraReborn theme"),
 }
 
-TARGETS = {"33": (("id_ID", 0), ("en_US", 1)), "35": (("id", 0), ("en", 1))}
+TARGETS = {"33": (("id_ID", 0), ("en_US", 1)), "34": (("id", 0), ("en", 1)), "35": (("id", 0), ("en", 1))}
 
 
 def esc(value):
@@ -221,7 +222,7 @@ def main():
         ]
         for key in sorted(S):
             value = S[key][col]
-            if track == "35":
+            if track in ("34", "35"):
                 # OJS 3.4+ treats a translate parameter named "count" as a plural selector.
                 value = value.replace("{$count}", "{$num}")
             lines += [f'msgid "{P}{key}"', f'msgstr "{esc(value)}"', ""]

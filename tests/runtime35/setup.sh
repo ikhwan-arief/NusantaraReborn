@@ -59,10 +59,10 @@ grep -q 'installed = On' .work/ojs/config.inc.php || { echo "Install failed: .wo
 sed -i.bak "s#^base_url = .*#base_url = \"$BASE\"#" .work/ojs/config.inc.php && rm -f .work/ojs/config.inc.php.bak
 
 echo "== journals"
-TOKEN=$(curl -s -c "$JAR" -b "$JAR" "$BASE/index.php/index/en/login" | grep -o 'name="csrfToken" value="[^"]*"' | sed 's/.*value="//; s/"$//')
+TOKEN=$(curl -s -c "$JAR" -b "$JAR" "$BASE/index.php/index/en/login" | grep -o 'name="csrfToken" value="[^"]*"' | sed 's/.*value="//; s/"$//' || true)
 curl -s -c "$JAR" -b "$JAR" -o /dev/null --data-urlencode "csrfToken=$TOKEN" --data-urlencode "username=admin" \
   --data-urlencode "password=$ADMIN_PASS" "$BASE/index.php/index/en/login/signIn"
-CSRF=$(curl -s -c "$JAR" -b "$JAR" "$BASE/index.php/index/en/admin/contexts" | grep -o '"csrfToken":"[^"]*"' | head -1 | sed 's/.*:"//; s/"$//')
+CSRF=$(curl -s -c "$JAR" -b "$JAR" "$BASE/index.php/index/en/admin/contexts" | grep -o '"csrfToken":"[^"]*"' | head -1 | sed 's/.*:"//; s/"$//' || true)
 api() { curl -s -b "$JAR" -X POST -H "X-Csrf-Token: $CSRF" -H 'Content-Type: application/json' --data "$1" "$BASE/index.php/index/api/v1/contexts"; }
 api '{"urlPath":"nusantara","enabled":true,"primaryLocale":"en","supportedLocales":["en","id"],"supportedFormLocales":["en","id"],"supportedSubmissionLocales":["en","id"],"name":{"en":"Synthetic Journal of Nusantara Studies","id":"Jurnal Sintetis Kajian Nusantara"},"acronym":{"en":"SJNS","id":"JSKN"},"contactName":"Editorial Office (synthetic)","contactEmail":"editor@example.test","country":"ID"}' | grep -q '"id":1' || { echo "journal 1 failed" >&2; exit 1; }
 api '{"urlPath":"kosong","enabled":true,"primaryLocale":"id","supportedLocales":["id","en"],"supportedFormLocales":["id","en"],"supportedSubmissionLocales":["id"],"name":{"id":"Jurnal Uji Kosong","en":"Empty Test Journal"},"acronym":{"id":"JUK","en":"ETJ"},"contactName":"Empty (synthetic)","contactEmail":"empty@example.test","country":"ID"}' | grep -q '"id":2' || { echo "journal 2 failed" >&2; exit 1; }

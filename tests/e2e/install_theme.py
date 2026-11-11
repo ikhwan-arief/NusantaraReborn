@@ -4,6 +4,7 @@
 as the theme of journal "nusantara" through the Appearance form.
 
   NR_TRACK=33 python install_theme.py          (OJS 3.3, default)
+  NR_TRACK=34 python install_theme.py          (OJS 3.4)
   NR_TRACK=35 python install_theme.py          (OJS 3.5)
   NR_SKIP_UPLOAD=1 ...                          (plugin already uploaded: only enable + select)
 """
@@ -11,7 +12,7 @@ import os
 from playwright.sync_api import sync_playwright
 from common import BASE, JOURNAL, LAUNCH, ROOT, SHOTS, TRACK, login
 
-VERSION = {"33": "1.0.2.0", "35": "2.0.0.0"}[TRACK]
+VERSION = {"33": "1.0.2.0", "34": "3.0.0.0", "35": "2.0.0.0"}[TRACK]
 TARBALL = os.path.join(ROOT, "dist", "ojs" + TRACK, f"nusantaraReborn-{VERSION}.tar.gz")
 os.makedirs(SHOTS, exist_ok=True)
 
@@ -19,7 +20,7 @@ os.makedirs(SHOTS, exist_ok=True)
 def open_tab(page, name, label):
     page.goto(f"{BASE}/{JOURNAL}/management/settings/website")
     page.wait_for_load_state("networkidle")
-    if TRACK == "35":
+    if TRACK in ("34", "35"):
         page.get_by_role("tab", name=label).first.click()
     else:
         page.locator(f"a[href='#{name}'], button#{name}-button, [aria-controls='{name}']").first.click()
