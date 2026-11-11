@@ -1,8 +1,8 @@
-# Laporan Uji NusantaraReborn 1.0.0.0 — OJS 3.3
+# Laporan Uji NusantaraReborn 1.0.1.0 — OJS 3.3
 
 Developed by Ikhwan Arief (ikhwan[at]unand.ac.id). Copyright (c) 2026 Ikhwan Arief. Dokumentasi: CC BY-NC 4.0.
 
-**Tanggal:** 11 November 2026 · **Paket:** `dist/ojs33/nusantaraReborn-1.0.0.0.tar.gz`
+**Tanggal:** 11 November 2026 · **Paket:** `dist/ojs33/nusantaraReborn-1.0.1.0.tar.gz`
 **SHA-256:** lihat `dist/SHA256SUMS` · **Data:** seluruhnya sintetis (`tests/runtime33/seed/`)
 
 ## Lingkungan
@@ -32,6 +32,7 @@ Developed by Ikhwan Arief (ikhwan[at]unand.ac.id). Copyright (c) 2026 Ikhwan Ari
 | Naskah belum terbit tidak tampil | Lulus | Tidak muncul di kartu, artikel terkait, JSON-LD |
 | Lokal id_ID | Lulus | `lang="id-ID"`, label theme dan opsi multibahasa berbahasa Indonesia |
 | Halaman situs tanpa konteks jurnal (daftar jurnal di root) | Lulus setelah perbaikan | Nama situs sebelumnya kosong di header/footer; kini memakai judul situs OJS. Footer menempel di bawah layar pada halaman pendek |
+| Blok panduan + peringatan Navigation di pengaturan theme | Lulus | Tampil di atas opsi; status jumlah item menu benar (10/9); pesan menu kosong muncul saat menu dikosongkan; form tetap tersimpan; tidak ada nilai tersimpan untuk blok ini |
 | Jurnal kosong (tanpa terbitan/logo/deskripsi) | Lulus | Tanpa error; bagian kosong disembunyikan |
 | Escaping opsi (HTML, kutip, Unicode, `javascript:` URL) | Lulus | Skrip ter-escape; URL tak aman dibuang |
 | Lima preset × 375/1440 px (beranda, artikel, arsip) | Lulus | Tanpa overflow horizontal, tanpa error konsol |

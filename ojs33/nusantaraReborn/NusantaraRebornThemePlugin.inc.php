@@ -62,6 +62,12 @@ class NusantaraRebornThemePlugin extends ThemePlugin
         $this->removeStyle('font');
         $this->removeStyle('homepageImage');
 
+        // Read-only guide block at the top of the theme settings (no value is stored).
+        $this->addOption('nrSettingsGuide', 'FieldHTML', [
+            'label' => __('plugins.themes.nusantaraReborn.option.guide.label'),
+            'description' => $this->settingsGuideHtml(),
+        ]);
+
         $presetOptions = [];
         foreach (array_keys($this->presets) as $id) {
             $presetOptions[] = ['value' => $id, 'label' => __('plugins.themes.nusantaraReborn.option.colourScheme.' . $id)];
@@ -181,6 +187,48 @@ class NusantaraRebornThemePlugin extends ThemePlugin
 
         HookRegistry::register('TemplateManager::display', [$this, 'assignTemplateVariables']);
         HookRegistry::register('TemplateManager::display', [$this, 'assignPageData']);
+    }
+
+    /**
+     * Guide and Navigation warning shown at the top of the theme settings form, with the number
+     * of items in the journal's Primary Navigation Menu.
+     */
+    protected function settingsGuideHtml()
+    {
+        $html = '<p>' . __('plugins.themes.nusantaraReborn.option.guide.intro') . '</p>'
+            . '<div style="border-left:4px solid #B54708;background:#FFF6ED;padding:10px 14px;margin:10px 0;">'
+            . '<p style="margin:0 0 6px;"><strong>⚠ ' . __('plugins.themes.nusantaraReborn.option.guide.navTitle') . '</strong></p>'
+            . '<p style="margin:0;">' . __('plugins.themes.nusantaraReborn.option.guide.navBody') . '</p>';
+        $count = $this->primaryMenuItemCount();
+        if ($count === 0) {
+            $html .= '<p style="margin:8px 0 0;color:#B42318;"><strong>' . __('plugins.themes.nusantaraReborn.option.guide.navEmpty') . '</strong></p>';
+        } elseif ($count !== null) {
+            $html .= '<p style="margin:8px 0 0;color:#067647;">' . __('plugins.themes.nusantaraReborn.option.guide.navStatus', ['count' => $count]) . '</p>';
+        }
+        return $html . '</div>';
+    }
+
+    /**
+     * Items assigned to the Primary Navigation Menu of the current journal; null when unknown
+     * (site level, frontend requests, or an unexpected error).
+     */
+    protected function primaryMenuItemCount()
+    {
+        try {
+            $request = Application::get()->getRequest();
+            $context = $request->getContext();
+            if (!$context || $request->getRequestedPage() === null || in_array((string) $request->getRequestedPage(), ['', 'index', 'article', 'issue'], true)) {
+                return null;
+            }
+            $menus = DAORegistry::getDAO('NavigationMenuDAO')->getByArea($context->getId(), 'primary')->toArray();
+            if (!$menus) {
+                return 0;
+            }
+            $assignments = DAORegistry::getDAO('NavigationMenuItemAssignmentDAO')->getByMenuId($menus[0]->getId())->toArray();
+            return count($assignments);
+        } catch (Throwable $e) {
+            return null;
+        }
     }
 
     /**

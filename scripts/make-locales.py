@@ -19,6 +19,22 @@ S = {
         "Theme jurnal ilmiah umum bernuansa Indonesia dengan lima preset warna, ornamen Nusantara opsional, dan pilihan font sistem atau Google Fonts. Identitas, kebijakan, dan metadata tetap berasal dari pengaturan jurnal di OJS.",
         "A general scholarly journal theme with an Indonesian character: five colour presets, optional Nusantara ornaments, and system or Google fonts. Identity, policies and metadata always come from the journal's OJS settings."),
 
+    # Settings guide block (HTML allowed)
+    "option.guide.label": ("Panduan NusantaraReborn", "NusantaraReborn guide"),
+    "option.guide.intro": (
+        "Setiap isian di bawah boleh dikosongkan: elemen yang kosong disembunyikan, tidak diganti teks contoh. Nama, logo, favicon, gambar beranda, deskripsi, ISSN, penerbit, dan kontak diambil dari pengaturan jurnal OJS. Penjelasan setiap isian dan cara mengisinya: <a href=\"https://github.com/ikhwan-arief/NusantaraReborn/blob/main/docs/PANDUAN-PENGATURAN.md\" target=\"_blank\" rel=\"noopener\">Panduan Pengaturan NusantaraReborn</a> (juga tersedia sebagai docs/PANDUAN-PENGATURAN.md di dalam paket).",
+        "Every field below may be left empty: empty elements are hidden, never replaced by sample text. Name, logo, favicon, homepage image, description, ISSN, publisher and contact come from the journal's OJS settings. What each field means and how to fill it in: <a href=\"https://github.com/ikhwan-arief/NusantaraReborn/blob/main/docs/PANDUAN-PENGATURAN.md\" target=\"_blank\" rel=\"noopener\">NusantaraReborn Settings Guide</a> (also docs/PANDUAN-PENGATURAN.md inside the package)."),
+    "option.guide.navTitle": ("Peringatan: buat menu melalui Navigation OJS", "Warning: build menus with OJS Navigation"),
+    "option.guide.navBody": (
+        "Theme ini tampil sempurna bila menu dibuat dari <strong>Pengaturan &gt; Situs Web &gt; Pengaturan &gt; Navigasi</strong> (Settings &gt; Website &gt; Setup &gt; Navigation), pada <em>Primary Navigation Menu</em> dan <em>User Navigation Menu</em>. Jangan membuat menu dengan HTML di footer, blok kustom, atau konten tambahan beranda: menu seperti itu tidak ikut menu seluler, penanda halaman aktif, breadcrumb, dan terjemahan. Tautan <em>Beranda</em> sudah ditambahkan otomatis oleh theme, jadi tidak perlu dibuat lagi. Halaman kebijakan sebaiknya berupa <em>Custom Page</em> dari Navigasi, ditaruh sebagai submenu.",
+        "This theme displays best when menus are built in <strong>Settings &gt; Website &gt; Setup &gt; Navigation</strong>, in the <em>Primary Navigation Menu</em> and <em>User Navigation Menu</em>. Do not build menus as HTML in the footer, custom blocks or additional homepage content: such menus miss the mobile menu, active-page marking, breadcrumbs and translations. The theme adds the <em>Home</em> link itself, so do not create one. Policy pages work best as Navigation <em>Custom Pages</em> placed as sub-items."),
+    "option.guide.navEmpty": (
+        "Primary Navigation Menu jurnal ini masih kosong. Tambahkan item menu melalui Navigasi agar header tampil lengkap.",
+        "This journal's Primary Navigation Menu is empty. Add menu items through Navigation so the header is complete."),
+    "option.guide.navStatus": (
+        "Status: Primary Navigation Menu berisi {$count} item.",
+        "Status: the Primary Navigation Menu has {$count} items."),
+
     # Options: presentation
     "option.colourScheme.label": ("Preset warna", "Colour preset"),
     "option.colourScheme.description": (

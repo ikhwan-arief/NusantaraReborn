@@ -4,7 +4,7 @@ Theme jurnal ilmiah umum bernuansa Indonesia untuk OJS. Rencana: `IMPLEMENTATION
 
 | Jalur | Status | Paket |
 |---|---|---|
-| OJS 3.3 (3.3.0-24) | 1.0.0.0 dibangun dan diuji lokal | `dist/ojs33/nusantaraReborn-1.0.0.0.tar.gz` |
+| OJS 3.3 (3.3.0-24) | 1.0.1.0 dibangun dan diuji lokal | `dist/ojs33/nusantaraReborn-1.0.1.0.tar.gz` |
 | OJS 3.5 (3.5.0-6) | Belum dikerjakan | — |
 
 ## Struktur

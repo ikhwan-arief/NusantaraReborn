@@ -283,6 +283,24 @@ msgstr "Sumber font"
 msgid "plugins.themes.nusantaraReborn.option.fontSource.system"
 msgstr "Font sistem (tanpa permintaan eksternal)"
 
+msgid "plugins.themes.nusantaraReborn.option.guide.intro"
+msgstr "Setiap isian di bawah boleh dikosongkan: elemen yang kosong disembunyikan, tidak diganti teks contoh. Nama, logo, favicon, gambar beranda, deskripsi, ISSN, penerbit, dan kontak diambil dari pengaturan jurnal OJS. Penjelasan setiap isian dan cara mengisinya: <a href=\"https://github.com/ikhwan-arief/NusantaraReborn/blob/main/docs/PANDUAN-PENGATURAN.md\" target=\"_blank\" rel=\"noopener\">Panduan Pengaturan NusantaraReborn</a> (juga tersedia sebagai docs/PANDUAN-PENGATURAN.md di dalam paket)."
+
+msgid "plugins.themes.nusantaraReborn.option.guide.label"
+msgstr "Panduan NusantaraReborn"
+
+msgid "plugins.themes.nusantaraReborn.option.guide.navBody"
+msgstr "Theme ini tampil sempurna bila menu dibuat dari <strong>Pengaturan &gt; Situs Web &gt; Pengaturan &gt; Navigasi</strong> (Settings &gt; Website &gt; Setup &gt; Navigation), pada <em>Primary Navigation Menu</em> dan <em>User Navigation Menu</em>. Jangan membuat menu dengan HTML di footer, blok kustom, atau konten tambahan beranda: menu seperti itu tidak ikut menu seluler, penanda halaman aktif, breadcrumb, dan terjemahan. Tautan <em>Beranda</em> sudah ditambahkan otomatis oleh theme, jadi tidak perlu dibuat lagi. Halaman kebijakan sebaiknya berupa <em>Custom Page</em> dari Navigasi, ditaruh sebagai submenu."
+
+msgid "plugins.themes.nusantaraReborn.option.guide.navEmpty"
+msgstr "Primary Navigation Menu jurnal ini masih kosong. Tambahkan item menu melalui Navigasi agar header tampil lengkap."
+
+msgid "plugins.themes.nusantaraReborn.option.guide.navStatus"
+msgstr "Status: Primary Navigation Menu berisi {$count} item."
+
+msgid "plugins.themes.nusantaraReborn.option.guide.navTitle"
+msgstr "Peringatan: buat menu melalui Navigation OJS"
+
 msgid "plugins.themes.nusantaraReborn.option.heroCaption.description"
 msgstr "Keterangan kecil di pojok gambar hero, misalnya sumber foto Homepage Image. Kosongkan untuk menyembunyikan."
 

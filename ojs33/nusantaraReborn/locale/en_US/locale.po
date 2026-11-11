@@ -283,6 +283,24 @@ msgstr "Font source"
 msgid "plugins.themes.nusantaraReborn.option.fontSource.system"
 msgstr "System fonts (no external requests)"
 
+msgid "plugins.themes.nusantaraReborn.option.guide.intro"
+msgstr "Every field below may be left empty: empty elements are hidden, never replaced by sample text. Name, logo, favicon, homepage image, description, ISSN, publisher and contact come from the journal's OJS settings. What each field means and how to fill it in: <a href=\"https://github.com/ikhwan-arief/NusantaraReborn/blob/main/docs/PANDUAN-PENGATURAN.md\" target=\"_blank\" rel=\"noopener\">NusantaraReborn Settings Guide</a> (also docs/PANDUAN-PENGATURAN.md inside the package)."
+
+msgid "plugins.themes.nusantaraReborn.option.guide.label"
+msgstr "NusantaraReborn guide"
+
+msgid "plugins.themes.nusantaraReborn.option.guide.navBody"
+msgstr "This theme displays best when menus are built in <strong>Settings &gt; Website &gt; Setup &gt; Navigation</strong>, in the <em>Primary Navigation Menu</em> and <em>User Navigation Menu</em>. Do not build menus as HTML in the footer, custom blocks or additional homepage content: such menus miss the mobile menu, active-page marking, breadcrumbs and translations. The theme adds the <em>Home</em> link itself, so do not create one. Policy pages work best as Navigation <em>Custom Pages</em> placed as sub-items."
+
+msgid "plugins.themes.nusantaraReborn.option.guide.navEmpty"
+msgstr "This journal's Primary Navigation Menu is empty. Add menu items through Navigation so the header is complete."
+
+msgid "plugins.themes.nusantaraReborn.option.guide.navStatus"
+msgstr "Status: the Primary Navigation Menu has {$count} items."
+
+msgid "plugins.themes.nusantaraReborn.option.guide.navTitle"
+msgstr "Warning: build menus with OJS Navigation"
+
 msgid "plugins.themes.nusantaraReborn.option.heroCaption.description"
 msgstr "Small caption in the corner of the hero, e.g. the credit for the Homepage Image. Leave empty to hide."
 

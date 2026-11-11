@@ -1,11 +1,11 @@
-# NusantaraReborn 1.0.0.0 — OJS 3.3
+# NusantaraReborn 1.0.1.0 — OJS 3.3
 
 Theme jurnal ilmiah umum bernuansa Indonesia untuk **OJS 3.3** (diuji pada 3.3.0-24). Paket ini **bukan** untuk OJS 3.4/3.5; gunakan paket seri 2.x untuk OJS 3.5.
 
 ## Instalasi
 
 1. Masuk sebagai administrator atau pengelola jurnal: **Pengaturan > Situs Web > Plugin > Unggah Plugin Baru**.
-2. Unggah `nusantaraReborn-1.0.0.0.tar.gz` tanpa mengganti nama berkas (OJS 3.3 membaca nama plugin dari awal nama arsip).
+2. Unggah `nusantaraReborn-1.0.1.0.tar.gz` tanpa mengganti nama berkas (OJS 3.3 membaca nama plugin dari awal nama arsip).
 3. Aktifkan **NusantaraReborn** pada daftar plugin, lalu pilih di **Pengaturan > Situs Web > Tampilan > Theme**.
 
 Instalasi manual: ekstrak sehingga folder menjadi `plugins/themes/nusantaraReborn/`, lalu jalankan `php lib/pkp/tools/installPluginVersion.php plugins/themes/nusantaraReborn/version.xml` dari root OJS.

@@ -34,6 +34,7 @@ cp "$ROOT"/shared/assets/heroes/*.webp "$STAGE/assets/heroes/"
 cp "$ROOT"/shared/assets/covers/*.svg "$STAGE/assets/covers/"
 cp "$ROOT"/shared/assets/ornaments/*.svg "$STAGE/assets/ornaments/"
 cp "$ROOT/shared/assets/ASSET-MANIFEST.txt" "$STAGE/assets/"
+mkdir -p "$STAGE/docs" && cp "$ROOT/docs/PANDUAN-PENGATURAN.md" "$STAGE/docs/"
 cp "$ROOT/shared/package/LICENSE" "$ROOT/shared/package/LICENSE-GPL-3.0.txt" "$ROOT/shared/package/NOTICE.md" "$STAGE/"
 
 # Guard: nothing hidden, no legacy identity, no symlinks.

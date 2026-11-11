@@ -6,7 +6,7 @@ import os, sys
 from playwright.sync_api import sync_playwright
 from common import BASE, JOURNAL, LAUNCH, ROOT, SHOTS, login
 
-TARBALL = os.path.join(ROOT, "dist", "ojs33", "nusantaraReborn-1.0.0.0.tar.gz")
+TARBALL = os.path.join(ROOT, "dist", "ojs33", "nusantaraReborn-1.0.1.0.tar.gz")
 os.makedirs(SHOTS, exist_ok=True)
 
 

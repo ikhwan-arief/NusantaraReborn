@@ -1,5 +1,10 @@
 # Changelog — NusantaraReborn (OJS 3.3 track)
 
+## 1.0.1.0 — 2026-11-11
+
+- Site-level pages (journal list without a journal context) show the OJS site title; the footer stays at the bottom of short pages.
+- Theme settings start with a guide block: a warning to build menus with OJS Navigation, a live count of Primary Navigation Menu items, and a link to docs/PANDUAN-PENGATURAN.md (included in the package).
+
 ## 1.0.0.0 — 2026-11-11
 
 First release of NusantaraReborn for OJS 3.3 (tested on 3.3.0-24). New plugin; no automatic migration from Unand Journal Theme.
@@ -14,5 +19,4 @@ First release of NusantaraReborn for OJS 3.3 (tested on 3.3.0-24). New plugin; n
 - Ported the OJS 3.3.0-24 escaping of the article copyright statement.
 - Editorial dates appear only on published versions and read only decision type and date. JSON-LD and related articles use published content only.
 - Corresponding author email is hidden by default (option to show).
-- Site-level pages (journal list without a journal context) show the OJS site title; the footer stays at the bottom of short pages.
 - Fallback issue covers are text-free and follow the active preset.
