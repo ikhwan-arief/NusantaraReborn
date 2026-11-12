@@ -1,0 +1,51 @@
+/*
+ * NusantaraReborn - contoh stylesheet warna kustom ("Ungu Akademik").
+ * Unggah lewat Settings > Website > Appearance > Advanced > Journal style sheet.
+ * Berlaku untuk NusantaraReborn 1.x (OJS 3.3), 3.x (OJS 3.4), dan 2.x (OJS 3.5).
+ * Developed by Ikhwan Arief (ikhwan[at]unand.ac.id).
+ * Copyright (c) 2026 Ikhwan Arief. Copyright held by the application developer.
+ * Dokumentasi dan contoh: CC BY-NC 4.0.
+ *
+ * Selektor body.nr_theme.nr_theme[class] lebih spesifik daripada selektor preset
+ * (body.nr_theme.nr_scheme_...), sehingga warna ini berlaku apa pun preset yang dipilih.
+ */
+body.nr_theme.nr_theme[class] {
+    /* Warna utama: tautan, judul, ikon, header halaman dalam */
+    --nr-primary: #4B2E83;
+    --nr-primary-dark: #33205C;       /* bar menu, footer, tombol gelap */
+    --nr-primary-dark-rgb: 51,32,92;  /* angka RGB dari --nr-primary-dark, untuk bayangan hero */
+    --nr-primary-soft: #EFEAF7;       /* latar lembut */
+
+    /* Warna aksen: tombol utama, lencana, ikon bulat */
+    --nr-accent: #86520F;
+    --nr-accent-dark: #6A400B;        /* hover tombol */
+    --nr-accent-bright: #A26A1C;      /* ikon, garis judul, cincin fokus, kotak berwarna */
+
+    /* Menu aktif */
+    --nr-nav-active-bg: #D4A93A;
+    --nr-nav-active-text: #1E1606;
+
+    /* Latar dan teks */
+    --nr-page-bg: #FBFAF7;
+    --nr-surface: #F2EFF6;
+    --nr-text: #231D2F;
+    --nr-muted: #5A5468;
+    --nr-border: #E2DDEA;
+
+    /* Ornamen: motif preset memakai warna tetap; matikan agar tidak bertabrakan */
+    --nr-ornament: none;
+    --nr-ornament-strip: none;
+}
+
+/*
+ * Latar hero bawaan preset (dipakai hanya bila Homepage Image belum diunggah) adalah foto
+ * berwarna tetap. Baris berikut mewarnainya ulang dengan --nr-primary-dark.
+ * Hapus bagian ini bila Anda mengunggah Homepage Image sendiri.
+ */
+body.nr_theme .nr_hero.is-preset,
+body.nr_theme .nr_page_banner.is-preset { background: var(--nr-primary-dark); }
+body.nr_theme .nr_hero.is-preset .nr_hero_media img,
+body.nr_theme .nr_page_banner.is-preset .nr_page_banner__media img {
+    mix-blend-mode: luminosity;
+    opacity: .55;
+}
