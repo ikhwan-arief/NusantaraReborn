@@ -56,7 +56,6 @@ php lib/pkp/tools/installPluginVersion.php plugins/themes/nusantaraReborn/versio
 | README dan CHANGELOG per versi | [OJS 3.3](ojs33/nusantaraReborn/README.md) · [OJS 3.4](ojs34/nusantaraReborn/README.md) · [OJS 3.5](ojs35/nusantaraReborn/README.md); riwayat perubahan: [3.3](ojs33/nusantaraReborn/CHANGELOG.md) · [3.4](ojs34/nusantaraReborn/CHANGELOG.md) · [3.5](ojs35/nusantaraReborn/CHANGELOG.md) |
 | Laporan uji | [OJS 3.3](docs/TEST-REPORT-OJS33.md) · [OJS 3.4](docs/TEST-REPORT-OJS34.md) · [OJS 3.5](docs/TEST-REPORT-OJS35.md) |
 | Audit keamanan | [OJS 3.3](docs/SECURITY-AUDIT-OJS33.md) · [OJS 3.4](docs/SECURITY-AUDIT-OJS34.md) · [OJS 3.5](docs/SECURITY-AUDIT-OJS35.md) |
-| Rencana pengembangan | [IMPLEMENTATION-PLAN.md](IMPLEMENTATION-PLAN.md) · [PLAN-OJS35.md](docs/PLAN-OJS35.md) |
 
 ## Struktur repositori
 
@@ -67,7 +66,7 @@ php lib/pkp/tools/installPluginVersion.php plugins/themes/nusantaraReborn/versio
 | `shared/` | Bagian yang sama untuk semua versi: `styles/` (CSS dan token preset), `js/`, `assets/` (latar hero, ornamen, sampul bawaan; semuanya orisinal tanpa logo atau lambang), dan `package/` (LICENSE dan NOTICE). |
 | `scripts/` | Alat build: `presets.json` (sumber token warna), `build.sh`, uji kontras WCAG, dan pembangkit locale, CSS preset, serta aset visual. |
 | `tests/` | Stack Docker lokal dengan **data sintetis** untuk uji runtime (`runtime33`, `runtime34`, `runtime35`) dan uji upgrade (`upgrade34`, `upgrade35`), fixture, dan uji browser Playwright (`e2e/`). |
-| `docs/` | Panduan, contoh stylesheet, laporan uji, audit keamanan, dan rencana. |
+| `docs/` | Panduan, contoh stylesheet, laporan uji, dan audit keamanan. |
 
 ## Build dan uji (untuk pengembang)
 

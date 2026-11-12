@@ -10,3 +10,7 @@ __pycache__/
 
 # Legacy snapshots contain institutional marks; kept local only
 legacy/*.tar.gz
+
+# Internal planning notes (local only)
+IMPLEMENTATION-PLAN.md
+docs/PLAN-OJS35.md

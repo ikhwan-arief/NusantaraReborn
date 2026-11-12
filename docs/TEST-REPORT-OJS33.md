@@ -9,7 +9,7 @@ Developed by Ikhwan Arief (ikhwan[at]unand.ac.id). Copyright (c) 2026 Ikhwan Ari
 
 | Komponen | Versi |
 |---|---|
-| OJS | 3.3.0-24 (arsip lokal, SHA-256 cocok dengan rencana §4.1) |
+| OJS | 3.3.0-24 (arsip lokal, SHA-256 terverifikasi) |
 | PHP | 8.2.35 (php:8.2-apache) |
 | Database | MariaDB 10.11.19 |
 | Browser | Google Chrome 157 (Playwright, headless) |

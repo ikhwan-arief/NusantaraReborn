@@ -3,13 +3,13 @@
 Developed by Ikhwan Arief (ikhwan[at]unand.ac.id). Copyright (c) 2026 Ikhwan Arief. Dokumentasi: CC BY-NC 4.0.
 
 **Tanggal:** 11 November 2026 · **Paket:** `dist/ojs35/nusantaraReborn-2.0.0.0.tar.gz` (SHA-256 di `dist/SHA256SUMS`)
-**Rencana:** `docs/PLAN-OJS35.md` · **Data:** seluruhnya sintetis (`tests/runtime35/seed/`), kecuali satu ID ROR yang diambil dari registri ROR bawaan OJS untuk menguji afiliasi ROR.
+**Data:** seluruhnya sintetis (`tests/runtime35/seed/`), kecuali satu ID ROR yang diambil dari registri ROR bawaan OJS untuk menguji afiliasi ROR.
 
 ## Lingkungan
 
 | Komponen | Versi |
 |---|---|
-| OJS | 3.5.0-6 (arsip lokal, SHA-256 cocok dengan rencana induk §4.1) |
+| OJS | 3.5.0-6 (arsip lokal, SHA-256 terverifikasi) |
 | PHP | 8.2 (php:8.2-apache, ekstensi termasuk `ftp` yang diwajibkan platform check Composer OJS 3.5) |
 | Database | MariaDB 10.11 |
 | Browser | Google Chrome 157 (Playwright, headless) |
