@@ -802,6 +802,8 @@ body.nr_theme .nr_masthead h2.nr_title { margin: 26px 0 12px; font-size: 1.45rem
 .nr_role { color: var(--nr-accent); }
 .nr_country { display: inline-flex; align-items: center; gap: 8px; color: var(--nr-muted); font-size: .86rem; }
 .nr_person_link { font-size: .85rem; }
+.nr_person_links { display: flex; flex-wrap: wrap; gap: 4px 8px; margin-top: 3px; font-size: .82rem; }
+.nr_person_name_col { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .nr_people_table { border: 1px solid var(--nr-border); border-radius: 4px; }
 .nr_people_row { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, .6fr); gap: 14px; align-items: center; padding: 9px 16px; color: var(--nr-muted); font-size: .88rem; }
 .nr_people_table.has-role .nr_people_row { grid-template-columns: minmax(0, 1.15fr) minmax(0, .65fr) minmax(0, .9fr) minmax(0, .6fr); }

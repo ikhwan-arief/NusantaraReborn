@@ -310,22 +310,29 @@
         var parseEntry = function(li) {
             var image = li.querySelector('img');
             var nameNode = li.querySelector('strong, b');
+            var nameAnchor = nameNode ? nameNode.closest('a') : null;
+            if (!nameAnchor && nameNode) {
+                nameAnchor = nameNode.querySelector('a');
+            }
+            var nameUrl = nameAnchor ? nameAnchor.getAttribute('href') : '';
             var name = text(nameNode);
             var clone = li.cloneNode(true);
-            Array.prototype.forEach.call(clone.querySelectorAll('img, strong, b'), function(el) { el.parentNode.removeChild(el); });
+            Array.prototype.forEach.call(clone.querySelectorAll('img, strong, b, a'), function(el) { el.parentNode.removeChild(el); });
             var parts = clone.innerHTML.split(/<br\s*\/?>|\s[–—-]\s/i).map(function(part) {
                 var holder = document.createElement('div');
                 holder.innerHTML = part;
-                return text(holder).replace(/^[,;–—-]\s*/, '');
+                return text(holder).replace(/^[,;–—\-\[\]()\s]+/, '').replace(/[,;–—\-\[\]()\s]+$/, '');
             }).filter(Boolean);
             var country = null;
             if (parts.length && countries[parts[parts.length - 1].toLowerCase()]) {
                 var last = parts.pop();
                 country = { name: last, flag: countries[last.toLowerCase()].flag };
             }
-            var links = Array.prototype.filter.call(li.querySelectorAll('a[href]'), function(a) { return !a.contains(nameNode); });
+            var links = Array.prototype.filter.call(li.querySelectorAll('a[href]'), function(a) {
+                return a !== nameAnchor && (!nameNode || !a.contains(nameNode));
+            });
             var role = parts.length >= 2 ? parts.shift() : '';
-            return { name: name || parts.shift() || '', role: role, affiliation: parts.join(', '), country: country, image: image ? image.getAttribute('src') : '', links: links };
+            return { name: name || parts.shift() || '', nameUrl: nameUrl, role: role, affiliation: parts.join(', '), country: country, image: image ? image.getAttribute('src') : '', links: links };
         };
         var flagHtml = function(country) {
             if (!country) { return ''; }
@@ -340,6 +347,13 @@
             var div = document.createElement('div');
             div.textContent = value;
             return div.innerHTML;
+        };
+        var formatName = function(entry) {
+            var escaped = escapeHtml(entry.name);
+            if (entry.nameUrl) {
+                return '<a href="' + escapeHtml(entry.nameUrl) + '" target="_blank" rel="noopener noreferrer">' + escaped + '</a>';
+            }
+            return escaped;
         };
         var initials = function(name) {
             return name.replace(/\b(Prof|Dr|Ir|Eng|rer|nat)\.?\s*/gi, '').split(/[\s,]+/).filter(function(w) { return /^[A-Z]/.test(w); }).slice(0, 2).map(function(w) { return w[0]; }).join('');
@@ -364,13 +378,15 @@
                     card.innerHTML = (entry.image
                         ? '<img class="nr_person_photo" src="' + escapeHtml(entry.image) + '" alt="" loading="lazy">'
                         : '<span class="nr_person_photo nr_person_initials" aria-hidden="true">' + escapeHtml(initials(entry.name)) + '</span>') +
-                        '<div class="nr_person_text"><strong>' + escapeHtml(entry.name) + '</strong>' +
+                        '<div class="nr_person_text"><strong>' + formatName(entry) + '</strong>' +
                         (entry.role ? '<span class="nr_role">' + escapeHtml(entry.role) + '</span>' : '') +
                         (entry.affiliation ? '<span>' + escapeHtml(entry.affiliation) + '</span>' : '') +
                         flagHtml(entry.country) + '</div>';
                     entry.links.forEach(function(link) {
                         var copy = link.cloneNode(true);
                         copy.classList.add('nr_person_link');
+                        copy.setAttribute('target', '_blank');
+                        copy.setAttribute('rel', 'noopener noreferrer');
                         card.querySelector('.nr_person_text').appendChild(copy);
                     });
                     wrapper.appendChild(card);
@@ -381,9 +397,37 @@
                 entries.forEach(function(entry) {
                     var row = document.createElement('div');
                     row.className = 'nr_people_row';
-                    row.innerHTML = '<strong>' + escapeHtml(entry.name) + '</strong>' +
-                        (hasRole ? '<span class="nr_role">' + escapeHtml(entry.role) + '</span>' : '') +
-                        '<span>' + escapeHtml(entry.affiliation) + '</span>' + (flagHtml(entry.country) || '<span></span>');
+                    var nameCol = document.createElement('div');
+                    nameCol.className = 'nr_person_name_col';
+                    nameCol.innerHTML = '<strong>' + formatName(entry) + '</strong>';
+                    if (entry.links && entry.links.length) {
+                        var linksWrap = document.createElement('div');
+                        linksWrap.className = 'nr_person_links';
+                        entry.links.forEach(function(link) {
+                            var copy = link.cloneNode(true);
+                            copy.classList.add('nr_person_link');
+                            copy.setAttribute('target', '_blank');
+                            copy.setAttribute('rel', 'noopener noreferrer');
+                            linksWrap.appendChild(copy);
+                        });
+                        nameCol.appendChild(linksWrap);
+                    }
+
+                    row.appendChild(nameCol);
+                    if (hasRole) {
+                        var roleCol = document.createElement('span');
+                        roleCol.className = 'nr_role';
+                        roleCol.textContent = entry.role || '';
+                        row.appendChild(roleCol);
+                    }
+                    var affCol = document.createElement('span');
+                    affCol.textContent = entry.affiliation || '';
+                    row.appendChild(affCol);
+
+                    var countryCol = document.createElement('div');
+                    countryCol.innerHTML = flagHtml(entry.country) || '<span></span>';
+                    row.appendChild(countryCol.firstChild);
+
                     wrapper.appendChild(row);
                 });
             }
