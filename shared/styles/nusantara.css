@@ -95,7 +95,14 @@ body.nr_theme h4 {
 .nr_theme .pkp_structure_content::before,
 .nr_theme .pkp_structure_content::after,
 .nr_theme .pkp_structure_main::before,
-.nr_theme .pkp_structure_main::after { display: none; content: none; }
+.nr_theme .pkp_structure_main::after,
+.nr_theme .pkp_structure_main:first-child:last-child::before,
+.nr_theme .pkp_structure_main:first-child:last-child::after {
+    display: none !important;
+    content: none !important;
+    border: 0 !important;
+    width: 0 !important;
+}
 .nr_theme .pkp_structure_main,
 .nr_theme .pkp_structure_main:first-child:last-child {
     float: none;
