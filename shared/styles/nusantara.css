@@ -1073,7 +1073,28 @@ body.nr_theme .pkp_structure_page > .nr_footer { margin-top: auto; }
 
 /* CSL block inserted by the Citation Style Language plugin into the side column (OJS 3.4/3.5). */
 .nr_theme .nr_article_side .item.citation { padding: 18px 22px; border-radius: 6px; background: var(--nr-box); }
-.nr_theme .nr_article_side .item.citation h2.label { margin: 0 0 10px; color: var(--nr-ink); font-family: var(--nr-font-serif); font-size: 1.3rem; font-weight: 700; }
+.nr_theme .nr_article_side .item.citation h2.label {
+    position: relative;
+    margin: 0 0 14px;
+    padding-left: 16px;
+    color: var(--nr-ink);
+    font-family: var(--nr-font-serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.nr_theme .nr_article_side .item.citation h2.label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .14em;
+    bottom: .14em;
+    width: 5px;
+    background: var(--nr-accent-bright);
+}
+.nr_ornaments_subtle .nr_theme .nr_article_side .item.citation h2.label::before {
+    box-shadow: 3px 0 0 0 var(--nr-page-bg), 6px 0 0 0 var(--nr-accent-bright);
+}
 body.nr_theme .nr_article_side .item.citation .citation_formats_button { display: block; width: 100%; min-height: 38px; margin: 0; padding: 8px 32px 8px 12px; border: 0; border-radius: 0; background: transparent; color: var(--nr-ink); font-family: var(--nr-font-ui); font-size: .84rem; font-weight: 600; text-align: left; }
 .nr_theme .nr_article_side #citationOutput { color: var(--nr-text); font-size: .86rem; line-height: 1.5; overflow-wrap: anywhere; }
 
