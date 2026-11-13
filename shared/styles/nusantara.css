@@ -708,8 +708,13 @@ body.nr_theme .nr_download { width: 100%; min-height: 50px; justify-content: spa
 .nr_dropdown li a:hover, .nr_dropdown li button:hover { background: var(--nr-primary-soft); }
 .is-copied .fa::before { content: "\f00c"; }
 .nr_article_side #citationOutput { color: var(--nr-text); font-size: .86rem; line-height: 1.5; overflow-wrap: anywhere; }
-.nr_article_side .citation_formats { margin: 8px 0 12px; }
-body.nr_theme .nr_article_side .citation_formats_button { width: auto; padding: 3px 26px 3px 8px; border: 1px solid var(--nr-box-line); border-radius: 3px; background: #fff; color: var(--nr-muted); font-size: .76rem; font-weight: 500; }
+.nr_article_side .citation_formats { margin: 12px 0 14px; border: 1px solid var(--nr-box-line); border-radius: 4px; background: var(--nr-card); overflow: hidden; }
+body.nr_theme .nr_article_side .citation_formats_button { display: block; width: 100%; min-height: 38px; margin: 0; padding: 8px 32px 8px 12px; border: 0; border-radius: 0; background: transparent; color: var(--nr-ink); font-family: var(--nr-font-ui); font-size: .84rem; font-weight: 600; text-align: left; }
+.nr_article_side .citation_formats_styles { margin: 0; padding: 0; list-style: none; }
+.nr_article_side .citation_formats_styles a { display: block; padding: 8px 12px; border-top: 1px solid var(--nr-box-line); color: var(--nr-text); font-size: .82rem; text-decoration: none; }
+.nr_article_side .citation_formats_styles a:hover, .nr_article_side .citation_formats_styles a:focus { background: var(--nr-primary-soft); color: var(--nr-primary-dark); }
+.nr_article_side .citation_formats_list .label { margin: 0; padding: 10px 12px 6px; border-top: 1px solid var(--nr-box-line); color: var(--nr-muted); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; }
+.nr_article_side .item.citation .nr_btn[data-nr-copy-target] { width: 100%; margin-top: 4px; justify-content: center; }
 .nr_article_info h3.label { margin: 14px 0 6px; font-size: .9rem; }
 .nr_article_info ul { margin: 0; padding-left: 18px; font-size: .85rem; }
 .nr_corresponding_body,
@@ -1066,10 +1071,10 @@ body.nr_theme .pkp_structure_page > .nr_footer { margin-top: auto; }
 .nr_data_availability { margin-bottom: 24px !important; padding: 16px 20px !important; border: 1px solid var(--nr-border) !important; border-radius: 6px; }
 .nr_data_availability .value { color: var(--nr-text); font-size: .95rem; line-height: 1.6; }
 
-/* CSL block inserted by the Citation Style Language plugin into the side column (OJS 3.5). */
+/* CSL block inserted by the Citation Style Language plugin into the side column (OJS 3.4/3.5). */
 .nr_theme .nr_article_side .item.citation { padding: 18px 22px; border-radius: 6px; background: var(--nr-box); }
 .nr_theme .nr_article_side .item.citation h2.label { margin: 0 0 10px; color: var(--nr-ink); font-family: var(--nr-font-serif); font-size: 1.3rem; font-weight: 700; }
-body.nr_theme .nr_article_side .item.citation .citation_formats_button { width: auto; margin-top: 10px; padding: 4px 26px 4px 10px; border: 1px solid var(--nr-box-line); border-radius: 3px; background: var(--nr-card); color: var(--nr-muted); font-family: var(--nr-font-ui); font-size: .8rem; font-weight: 500; }
+body.nr_theme .nr_article_side .item.citation .citation_formats_button { display: block; width: 100%; min-height: 38px; margin: 0; padding: 8px 32px 8px 12px; border: 0; border-radius: 0; background: transparent; color: var(--nr-ink); font-family: var(--nr-font-ui); font-size: .84rem; font-weight: 600; text-align: left; }
 .nr_theme .nr_article_side #citationOutput { color: var(--nr-text); font-size: .86rem; line-height: 1.5; overflow-wrap: anywhere; }
 
 /* ORCID badge when OJS provides no ORCID icon (OJS 3.4 with the orcidProfile plugin). */
