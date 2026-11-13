@@ -95,7 +95,6 @@
 
 		<div class="nr_footer_bottom">
 			<div class="nr_footer_bottom_inner">
-				<div class="nr_footer_copy">&copy; {$nrYear} {$nrSiteName|escape}</div>
 				{if $currentContext}
 					<nav class="nr_footer_links" aria-label="{translate|escape key="plugins.themes.nusantaraReborn.footer.links"}">
 						<a href="{url page="about" op="privacy"}">{translate key="plugins.themes.nusantaraReborn.footer.privacy"}</a>
@@ -105,7 +104,7 @@
 				{/if}
 				<div class="nr_footer_platform">
 					<a href="{url page="about" op="aboutThisPublishingSystem"}">{translate key="plugins.themes.nusantaraReborn.footer.platform" version=$nrOjsVersion}</a>
-					<span>{translate key="plugins.themes.nusantaraReborn.footer.themeCredit"}</span>
+					<span>&copy; {$nrYear} {translate key="plugins.themes.nusantaraReborn.footer.themeCredit"}</span>
 				</div>
 			</div>
 		</div>
