@@ -43,9 +43,6 @@ msgstr "View Issue"
 msgid "plugins.themes.nusantaraReborn.article.accepted"
 msgstr "Accepted"
 
-msgid "plugins.themes.nusantaraReborn.article.copyCitation"
-msgstr "Copy Citation"
-
 msgid "plugins.themes.nusantaraReborn.article.copyLink"
 msgstr "Copy link"
 
@@ -108,18 +105,6 @@ msgstr "Volume, Issue, Pages"
 
 msgid "plugins.themes.nusantaraReborn.description"
 msgstr "A general scholarly journal theme with an Indonesian character: five colour presets, optional Nusantara ornaments, and system or Google fonts. Identity, policies and metadata always come from the journal's OJS settings."
-
-msgid "plugins.themes.nusantaraReborn.editorial.office"
-msgstr "Editorial Office"
-
-msgid "plugins.themes.nusantaraReborn.editorial.openAccessText"
-msgstr "Journal content is available open access"
-
-msgid "plugins.themes.nusantaraReborn.editorial.publishedBy"
-msgstr "Published by"
-
-msgid "plugins.themes.nusantaraReborn.editorial.subjectArea"
-msgstr "Subject Area"
 
 msgid "plugins.themes.nusantaraReborn.footer.followUs"
 msgstr "Follow Us"
@@ -405,12 +390,6 @@ msgstr "Follow us: X URL"
 
 msgid "plugins.themes.nusantaraReborn.option.socialYoutube.label"
 msgstr "Follow us: YouTube URL"
-
-msgid "plugins.themes.nusantaraReborn.option.subjectAreaLabel.description"
-msgstr "Shown on the Editorial Team page. Leave empty to hide."
-
-msgid "plugins.themes.nusantaraReborn.option.subjectAreaLabel.label"
-msgstr "Subject area"
 
 msgid "plugins.themes.nusantaraReborn.option.termsUrl.label"
 msgstr "Terms of use URL (footer)"

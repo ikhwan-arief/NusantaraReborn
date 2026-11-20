@@ -1,5 +1,11 @@
 # Changelog — NusantaraReborn (OJS 3.3 track)
 
+## 1.0.5.0 — 2026-11-20
+
+Clean-up release; no visible change on public pages.
+
+- Removed an unused template variable (`nrThemeUrl`) and an unused style rule (`.nr_editor_role`).
+
 ## 1.0.4.0 — 2026-11-20
 
 Consolidated release: reviewed and kept every change made after the last release, plus the archive fix of 1.0.3.0.

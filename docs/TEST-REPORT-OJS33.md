@@ -75,3 +75,11 @@ Telaah dan konsolidasi perubahan 12–13 November (Dewan Redaksi, garis kolom, H
 | Judul How to Cite dengan ornamen halus | Lulus | Garis aksen ganda kini tampil (sebelumnya selektor tidak cocok pada OJS 3.4/3.5) |
 | Footer | Lulus | `© 2026 NusantaraReborn theme`; tidak ada klaim hak cipta atas nama jurnal |
 | Regresi halaman utama | Lulus | HTTP 200; tanpa error PHP dari theme |
+
+## Pembaruan 1.0.5.0 — 20 November 2026 (pembersihan kode)
+
+Penghapusan variabel, aturan CSS, dan string yang tidak terpakai; tidak ada perubahan tampilan yang disengaja.
+
+| Uji | Hasil | Catatan |
+|---|---|---|
+| Halaman publik sebelum/sesudah (1.0.4.0 → 1.0.5.0) | Lulus | 10 halaman × desktop/ponsel: HTTP 200, tanpa error konsol; HTML identik (kecuali token CSRF dan ID acak slider); screenshot identik kecuali selisih anti-aliasing |

@@ -336,7 +336,6 @@ class NusantaraRebornThemePlugin extends ThemePlugin
             'nrOrnaments' => $this->getOption('nusantaraOrnaments') === 'off' ? 'off' : 'subtle',
             'nrFontSource' => $this->fontSource(),
             'nrMetaColour' => $preset['metaColour'],
-            'nrThemeUrl' => $themeUrl,
             'nrDefaultCoverUrl' => $themeUrl . '/assets/covers/' . $presetId . '.svg',
             'nrHeroImageUrl' => $heroUrl,
             'nrHeroImageSrcset' => $heroSrcset,

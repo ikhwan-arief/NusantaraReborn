@@ -43,9 +43,6 @@ msgstr "Lihat Terbitan"
 msgid "plugins.themes.nusantaraReborn.article.accepted"
 msgstr "Diterima"
 
-msgid "plugins.themes.nusantaraReborn.article.copyCitation"
-msgstr "Salin Sitasi"
-
 msgid "plugins.themes.nusantaraReborn.article.copyLink"
 msgstr "Salin tautan"
 

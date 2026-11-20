@@ -197,6 +197,14 @@ S = {
 
 TARGETS = {"33": (("id_ID", 0), ("en_US", 1)), "34": (("id", 0), ("en", 1)), "35": (("id", 0), ("en", 1))}
 
+# Strings a track never uses: OJS 3.4/3.5 leave the copy-citation button to the CSL plugin, and
+# OJS 3.5 renders the Editorial Team from its native masthead (no subject area or office box).
+SKIP = {
+    "34": {"article.copyCitation"},
+    "35": {"article.copyCitation", "editorial.office", "editorial.publishedBy", "editorial.subjectArea",
+           "editorial.openAccessText", "option.subjectAreaLabel.label", "option.subjectAreaLabel.description"},
+}
+
 
 def esc(value):
     return value.replace("\\", "\\\\").replace('"', '\\"')
@@ -220,7 +228,8 @@ def main():
             '"Content-Transfer-Encoding: 8bit\\n"',
             "",
         ]
-        for key in sorted(S):
+        keys = [key for key in sorted(S) if key not in SKIP.get(track, ())]
+        for key in keys:
             value = S[key][col]
             if track in ("34", "35"):
                 # OJS 3.4+ treats a translate parameter named "count" as a plural selector.
@@ -229,7 +238,7 @@ def main():
         os.makedirs(os.path.join(base, locale), exist_ok=True)
         with open(os.path.join(base, locale, "locale.po"), "w", encoding="utf-8") as f:
             f.write("\n".join(lines))
-        print("wrote", locale, len(S), "strings")
+        print("wrote", locale, len(keys), "strings")
 
 
 if __name__ == "__main__":

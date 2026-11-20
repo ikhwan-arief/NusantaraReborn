@@ -1,5 +1,12 @@
 # Changelog — NusantaraReborn (OJS 3.4 track)
 
+## 3.0.3.0 — 2026-11-20
+
+Clean-up release; no visible change on public pages.
+
+- Removed an unused template variable (`nrThemeUrl`) and an unused style rule (`.nr_editor_role`).
+- Locale: dropped the unused copy-citation string (OJS 3.4 leaves that button to the CSL plugin).
+
 ## 3.0.2.0 — 2026-11-20
 
 Consolidated release: reviewed and kept every change made after the last release, plus the archive fix of 3.0.1.0.

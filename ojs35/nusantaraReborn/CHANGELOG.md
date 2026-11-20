@@ -1,5 +1,13 @@
 # Changelog — NusantaraReborn (OJS 3.5 track)
 
+## 2.0.3.0 — 2026-11-20
+
+Clean-up release; no visible change on public pages.
+
+- Removed an unused template variable (`nrThemeUrl`) and an unused style rule (`.nr_editor_role`).
+- Removed the *Subject area* setting: OJS 3.5 builds the Editorial Team from its native masthead, so the field had no effect. Saved values stay in the database and are simply ignored.
+- Locale: dropped strings this track never shows (copy citation, editorial office box, subject area).
+
 ## 2.0.2.0 — 2026-11-20
 
 Consolidated release: reviewed and kept every change made after the last release, plus the archive fix of 2.0.1.0.

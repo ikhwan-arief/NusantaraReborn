@@ -43,9 +43,6 @@ msgstr "Lihat Terbitan"
 msgid "plugins.themes.nusantaraReborn.article.accepted"
 msgstr "Diterima"
 
-msgid "plugins.themes.nusantaraReborn.article.copyCitation"
-msgstr "Salin Sitasi"
-
 msgid "plugins.themes.nusantaraReborn.article.copyLink"
 msgstr "Salin tautan"
 
@@ -108,18 +105,6 @@ msgstr "Volume, Nomor, Halaman"
 
 msgid "plugins.themes.nusantaraReborn.description"
 msgstr "Theme jurnal ilmiah umum bernuansa Indonesia dengan lima preset warna, ornamen Nusantara opsional, dan pilihan font sistem atau Google Fonts. Identitas, kebijakan, dan metadata tetap berasal dari pengaturan jurnal di OJS."
-
-msgid "plugins.themes.nusantaraReborn.editorial.office"
-msgstr "Kantor Redaksi"
-
-msgid "plugins.themes.nusantaraReborn.editorial.openAccessText"
-msgstr "Konten jurnal tersedia secara akses terbuka"
-
-msgid "plugins.themes.nusantaraReborn.editorial.publishedBy"
-msgstr "Diterbitkan oleh"
-
-msgid "plugins.themes.nusantaraReborn.editorial.subjectArea"
-msgstr "Bidang Ilmu"
 
 msgid "plugins.themes.nusantaraReborn.footer.followUs"
 msgstr "Ikuti Kami"
@@ -405,12 +390,6 @@ msgstr "Ikuti kami: URL X"
 
 msgid "plugins.themes.nusantaraReborn.option.socialYoutube.label"
 msgstr "Ikuti kami: URL YouTube"
-
-msgid "plugins.themes.nusantaraReborn.option.subjectAreaLabel.description"
-msgstr "Ditampilkan di halaman Dewan Redaksi. Kosongkan untuk menyembunyikan."
-
-msgid "plugins.themes.nusantaraReborn.option.subjectAreaLabel.label"
-msgstr "Bidang ilmu"
 
 msgid "plugins.themes.nusantaraReborn.option.termsUrl.label"
 msgstr "URL ketentuan penggunaan (footer)"

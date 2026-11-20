@@ -43,9 +43,6 @@ msgstr "View Issue"
 msgid "plugins.themes.nusantaraReborn.article.accepted"
 msgstr "Accepted"
 
-msgid "plugins.themes.nusantaraReborn.article.copyCitation"
-msgstr "Copy Citation"
-
 msgid "plugins.themes.nusantaraReborn.article.copyLink"
 msgstr "Copy link"
 

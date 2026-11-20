@@ -67,7 +67,7 @@ Setiap baris hanya tampil bila diisi. Kotak hilang bila semua baris kosong.
 | **Bahasa jurnal** | *Indonesia, Inggris*. Jika kosong, diambil dari bahasa naskah di OJS. |
 | **Pengindeksan (ringkas)** | *DOAJ, SINTA 3, Garuda*. Isi hanya yang sudah resmi. |
 | **Pengarsipan** | *PKP PN, LOCKSS* |
-| **Bidang ilmu** | Tampil di halaman Dewan Redaksi, misalnya *Ilmu Kelautan* |
+| **Bidang ilmu** | Tampil di halaman Dewan Redaksi (OJS 3.3 dan 3.4), misalnya *Ilmu Kelautan*. Di OJS 3.5 isian ini tidak ada karena Dewan Redaksi memakai masthead bawaan OJS. |
 
 ### Footer
 

@@ -651,7 +651,6 @@ body.nr_theme .nr_ann_list a:hover .nr_ann_title { color: var(--nr-primary); tex
 .nr_editor_avatar { display: grid; place-items: center; color: var(--nr-primary); font-size: 2.6rem; }
 .nr_editor_text { color: var(--nr-muted); font-size: .86rem; line-height: 1.45; }
 .nr_editor_text strong { display: block; color: var(--nr-ink); font-family: var(--nr-font-serif); font-size: 1.02rem; }
-.nr_editor_role { color: var(--nr-text); }
 .nr_editor_text p { margin: 10px 0 12px; }
 
 /* ---------- Article page ---------- */

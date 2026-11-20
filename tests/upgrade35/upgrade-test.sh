@@ -47,7 +47,7 @@ docker compose exec -T db mariadb -uojs -p"$DB_PASSWORD" ojs -e "SELECT setting_
 
 echo "== replace theme with the 3.5 package and upgrade OJS"
 rm -rf .work/ojs/plugins/themes/nusantaraReborn
-tar -xzf "$ROOT/dist/ojs35/nusantaraReborn-2.0.2.0.tar.gz" -C .work/ojs/plugins/themes/
+tar -xzf "$ROOT/dist/ojs35/nusantaraReborn-2.0.3.0.tar.gz" -C .work/ojs/plugins/themes/
 docker compose exec -T web chown -R www-data:www-data /var/www/html /var/www/files
 docker compose exec -T -u www-data web php lib/pkp/tools/appKey.php generate >/dev/null
 docker compose exec -T -u www-data web php tools/upgrade.php check | tail -5

@@ -135,7 +135,7 @@ class NusantaraRebornThemePlugin extends ThemePlugin
             'isMultilingual' => true,
         ]);
 
-        foreach (['publicationFrequencyLabel', 'peerReviewLabel', 'apcLabel', 'languageLabel', 'indexingLabel', 'archivingLabel', 'subjectAreaLabel'] as $name) {
+        foreach (['publicationFrequencyLabel', 'peerReviewLabel', 'apcLabel', 'languageLabel', 'indexingLabel', 'archivingLabel'] as $name) {
             $this->addOption($name, 'FieldText', [
                 'label' => __('plugins.themes.nusantaraReborn.option.' . $name . '.label'),
                 'description' => __('plugins.themes.nusantaraReborn.option.' . $name . '.description'),
@@ -335,7 +335,6 @@ class NusantaraRebornThemePlugin extends ThemePlugin
             'nrOrnaments' => $this->getOption('nusantaraOrnaments') === 'off' ? 'off' : 'subtle',
             'nrFontSource' => $this->fontSource(),
             'nrMetaColour' => $preset['metaColour'],
-            'nrThemeUrl' => $themeUrl,
             'nrDefaultCoverUrl' => $themeUrl . '/assets/covers/' . $presetId . '.svg',
             'nrHeroImageUrl' => $heroUrl,
             'nrHeroImageSrcset' => $heroSrcset,
@@ -384,7 +383,6 @@ class NusantaraRebornThemePlugin extends ThemePlugin
                 'nrLanguageLabel' => $this->languageLabel($context, $locale),
                 'nrIndexingLabel' => $this->localizedOption('indexingLabel', $locale),
                 'nrArchivingLabel' => $this->localizedOption('archivingLabel', $locale),
-                'nrSubjectAreaLabel' => $this->localizedOption('subjectAreaLabel', $locale),
                 'nrEditorInChiefName' => trim((string) $this->getOption('editorInChiefName')),
                 'nrEditorInChiefRole' => $this->localizedOption('editorInChiefRole', $locale) ?: __('plugins.themes.nusantaraReborn.home.editorInChief'),
                 'nrEditorInChiefAffiliation' => $this->localizedOption('editorInChiefAffiliation', $locale),
