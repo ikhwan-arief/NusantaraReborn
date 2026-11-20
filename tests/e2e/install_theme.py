@@ -12,7 +12,7 @@ import os
 from playwright.sync_api import sync_playwright
 from common import BASE, JOURNAL, LAUNCH, ROOT, SHOTS, TRACK, login
 
-VERSION = {"33": "1.0.3.0", "34": "3.0.1.0", "35": "2.0.1.0"}[TRACK]
+VERSION = {"33": "1.0.4.0", "34": "3.0.2.0", "35": "2.0.2.0"}[TRACK]
 TARBALL = os.path.join(ROOT, "dist", "ojs" + TRACK, f"nusantaraReborn-{VERSION}.tar.gz")
 os.makedirs(SHOTS, exist_ok=True)
 

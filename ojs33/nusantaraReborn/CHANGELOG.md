@@ -1,5 +1,16 @@
 # Changelog — NusantaraReborn (OJS 3.3 track)
 
+## 1.0.4.0 — 2026-11-20
+
+Consolidated release: reviewed and kept every change made after the last release, plus the archive fix of 1.0.3.0.
+
+- Editorial Team (from 2026-11-12/13 changes): external profile links on names are kept and shown on cards and table rows (CV, Scopus, etc. open in a new tab with `rel="noopener noreferrer"`); bracket and dash leftovers are trimmed from member lines.
+- Layout: the OJS default theme column lines no longer appear on any page.
+- How to Cite: full-width citation formats dropdown and Copy Citation button; heading styled like other section titles.
+- Footer: the copyright mark moved from the journal name to the theme credit (`© year NusantaraReborn theme`), so the theme no longer states a copyright on behalf of the journal.
+- Fixed in review: the double accent bar of the How to Cite heading used a selector that never matched (`.nr_ornaments_subtle .nr_theme …`, both classes are on `<body>`), so it did not show on OJS 3.4/3.5 with subtle ornaments.
+- Includes 1.0.3.0: archive statistics from one query.
+
 ## 1.0.3.0 — 2026-11-20
 
 Performance fix for large journals.
