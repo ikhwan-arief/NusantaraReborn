@@ -693,22 +693,48 @@ class NusantaraRebornThemePlugin extends ThemePlugin
             $years[$year]['issues'][] = $issue;
         }
 
-        foreach (Services::get('submission')->getMany(['contextId' => $contextId, 'issueIds' => $issueIds, 'status' => [STATUS_PUBLISHED]]) as $submission) {
-            $publication = $submission->getCurrentPublication();
-            $issueId = $publication ? (int) $publication->getData('issueId') : 0;
-            if (!isset($stats[$issueId])) {
-                continue;
-            }
-            $stats[$issueId]['articles']++;
-            if (preg_match_all('/\d+/', (string) $publication->getData('pages'), $m) && $m[0]) {
-                $first = (int) $m[0][0];
-                $last = (int) end($m[0]);
-                $stats[$issueId]['firstPage'] = $stats[$issueId]['firstPage'] === null ? $first : min($stats[$issueId]['firstPage'], $first);
-                $stats[$issueId]['lastPage'] = $stats[$issueId]['lastPage'] === null ? $last : max($stats[$issueId]['lastPage'], $last);
+        // One lightweight query (issue id + pages of each published article's current publication)
+        // instead of loading full submission objects: journals with thousands of articles per issue
+        // otherwise run ~23 queries per article and time out.
+        if ($issueIds) {
+            $rows = \Illuminate\Database\Capsule\Manager::table('submissions as s')
+                ->join('publication_settings as pi', function ($join) {
+                    $join->on('pi.publication_id', '=', 's.current_publication_id')
+                        ->where('pi.setting_name', '=', 'issueId');
+                })
+                ->leftJoin('publication_settings as pp', function ($join) {
+                    $join->on('pp.publication_id', '=', 's.current_publication_id')
+                        ->where('pp.setting_name', '=', 'pages')
+                        ->where('pp.locale', '=', '');
+                })
+                ->where('s.context_id', '=', (int) $contextId)
+                ->where('s.status', '=', STATUS_PUBLISHED)
+                ->whereIn('pi.setting_value', array_map('strval', $issueIds))
+                ->select('pi.setting_value as issue_id', 'pp.setting_value as pages')
+                ->get();
+            foreach ($rows as $row) {
+                $this->addArchiveStat($stats, (int) $row->issue_id, $row->pages);
             }
         }
 
         return ['nrArchiveYears' => array_values($years), 'nrArchiveStats' => $stats];
+    }
+
+    /**
+     * Count one article and widen its issue's page range.
+     */
+    protected function addArchiveStat(array &$stats, $issueId, $pages)
+    {
+        if (!isset($stats[$issueId])) {
+            return;
+        }
+        $stats[$issueId]['articles']++;
+        if (preg_match_all('/\d+/', (string) $pages, $m) && $m[0]) {
+            $first = (int) $m[0][0];
+            $last = (int) end($m[0]);
+            $stats[$issueId]['firstPage'] = $stats[$issueId]['firstPage'] === null ? $first : min($stats[$issueId]['firstPage'], $first);
+            $stats[$issueId]['lastPage'] = $stats[$issueId]['lastPage'] === null ? $last : max($stats[$issueId]['lastPage'], $last);
+        }
     }
 
     /**

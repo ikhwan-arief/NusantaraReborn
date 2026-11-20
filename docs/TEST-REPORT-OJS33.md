@@ -51,3 +51,13 @@ Developed by Ikhwan Arief (ikhwan[at]unand.ac.id). Copyright (c) 2026 Ikhwan Ari
 - Uji upgrade 3.3 → 3.5 menunggu jalur 3.5.
 - Menghapus cache kompilasi Smarty saat ada request berjalan dapat memicu error 500 sesaat ("Invalid compiled template"); ini race cache OJS di stack uji, hilang pada request berikutnya.
 - Log PHP berisi *deprecation* dari core OJS 3.3 pada PHP 8.2 (bukan dari theme).
+
+## Pembaruan 1.0.3.0 — 20 November 2026
+
+Perbaikan performa halaman Archive untuk jurnal besar. Data tetap sintetis.
+
+| Uji | Hasil | Catatan |
+|---|---|---|
+| Kartu Archive sama dengan 1.0.2.0 | Lulus | Jumlah artikel dan rentang halaman identik pada data uji |
+| Jumlah query tidak bergantung pada jumlah artikel | Lulus | Uji beban sementara (3.000 artikel sintetis ditambahkan ke satu edisi, lalu dihapus): 1.0.2.0 8,4 detik dan 60.196 query; 1.0.3.0 0,05 detik dan 51 query. |
+| Halaman utama | Lulus | Beranda, Archive, Dewan Redaksi, Custom Page, artikel, pencarian: HTTP 200; tanpa error PHP dari theme |

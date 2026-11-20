@@ -1,5 +1,13 @@
 # Changelog — NusantaraReborn (OJS 3.5 track)
 
+## 2.0.1.0 — 2026-11-20
+
+Performance fix for large journals and a date-format fix.
+
+- Archive page: article counts and page ranges per issue now come from one lightweight, parameterised query on `publications.issue_id` and publication_settings (`pages`) instead of loading every published submission with its publications, authors, galleys and keywords. Before, the cost grew by about 23 SQL queries per article, so journals with hundreds or thousands of articles per issue timed out (for example HTTP 524 behind Cloudflare). The query count of this step no longer depends on the number of articles.
+- Counts and page ranges are unchanged (verified against the previous release on the synthetic test stack).
+- Fixed dates written in the old strftime style, which OJS 3.4+ (Carbon `translatedFormat`) printed literally: archive issue cards showed "%750 %2026" instead of the month and year, and homepage announcement `datetime` attributes were invalid. They now use `F Y` (localised month) and `Y-m-d`.
+
 ## 2.0.0.0 — 2026-11-11
 
 First release for OJS 3.5 (tested on 3.5.0-6, PHP 8.2). Same plugin identity and option names as the 1.x OJS 3.3 track (`nusantaraReborn`, storage name `nusantararebornthemeplugin`), so settings carry over an OJS upgrade.

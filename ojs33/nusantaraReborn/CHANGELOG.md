@@ -1,5 +1,12 @@
 # Changelog — NusantaraReborn (OJS 3.3 track)
 
+## 1.0.3.0 — 2026-11-20
+
+Performance fix for large journals.
+
+- Archive page: article counts and page ranges per issue now come from one lightweight, parameterised query on publication_settings (`issueId`, `pages`) instead of loading every published submission with its publications, authors, galleys and keywords. Before, the cost grew by about 23 SQL queries per article, so journals with hundreds or thousands of articles per issue timed out (for example HTTP 524 behind Cloudflare). The query count of this step no longer depends on the number of articles.
+- Counts and page ranges are unchanged (verified against the previous release on the synthetic test stack).
+
 ## 1.0.2.0 — 2026-11-11
 
 Security hardening from docs/SECURITY-AUDIT-OJS33.md.

@@ -10,11 +10,11 @@ Pilih paket sesuai versi OJS. Paket untuk satu versi **tidak** dapat dipakai di 
 
 | Versi OJS | Seri theme | Versi terbaru | Paket | Rilis |
 |---|---|---|---|---|
-| OJS 3.3 (diuji 3.3.0-24) | 1.x | **1.0.2.0** | [`dist/ojs33/nusantaraReborn-1.0.2.0.tar.gz`](dist/ojs33/nusantaraReborn-1.0.2.0.tar.gz) | [v1.0.2.0](../../releases/tag/v1.0.2.0) |
-| OJS 3.4 (diuji 3.4.0-12) | 3.x | **3.0.0.0** | [`dist/ojs34/nusantaraReborn-3.0.0.0.tar.gz`](dist/ojs34/nusantaraReborn-3.0.0.0.tar.gz) | [v3.0.0.0](../../releases/tag/v3.0.0.0) |
-| OJS 3.5 (diuji 3.5.0-6) | 2.x | **2.0.0.0** | [`dist/ojs35/nusantaraReborn-2.0.0.0.tar.gz`](dist/ojs35/nusantaraReborn-2.0.0.0.tar.gz) | [v2.0.0.0](../../releases/tag/v2.0.0.0) |
+| OJS 3.3 (diuji 3.3.0-24) | 1.x | **1.0.3.0** | [`dist/ojs33/nusantaraReborn-1.0.3.0.tar.gz`](dist/ojs33/nusantaraReborn-1.0.3.0.tar.gz) | [v1.0.3.0](../../releases/tag/v1.0.3.0) |
+| OJS 3.4 (diuji 3.4.0-12) | 3.x | **3.0.1.0** | [`dist/ojs34/nusantaraReborn-3.0.1.0.tar.gz`](dist/ojs34/nusantaraReborn-3.0.1.0.tar.gz) | [v3.0.1.0](../../releases/tag/v3.0.1.0) |
+| OJS 3.5 (diuji 3.5.0-6) | 2.x | **2.0.1.0** | [`dist/ojs35/nusantaraReborn-2.0.1.0.tar.gz`](dist/ojs35/nusantaraReborn-2.0.1.0.tar.gz) | [v2.0.1.0](../../releases/tag/v2.0.1.0) |
 
-Semua rilis tersedia di halaman [Releases](../../releases). Checksum SHA-256 setiap paket ada di [`dist/SHA256SUMS`](dist/SHA256SUMS). Versi lama OJS 3.3 (1.0.0.0 dan 1.0.1.0) tetap disimpan di `dist/ojs33/` sebagai arsip; gunakan versi terbaru.
+Semua rilis tersedia di halaman [Releases](../../releases). Checksum SHA-256 setiap paket ada di [`dist/SHA256SUMS`](dist/SHA256SUMS). Versi lama tetap disimpan di `dist/` sebagai arsip; gunakan versi terbaru.
 
 ## Fitur
 

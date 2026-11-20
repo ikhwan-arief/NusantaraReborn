@@ -162,14 +162,14 @@
 									<span class="nr_feature_copy">
 										<span class="nr_feature_label">{if $nrAnnouncement.typeName}{$nrAnnouncement.typeName|escape}{else}{translate key="announcement.announcements"}{/if}</span>
 										<span class="nr_feature_title">{$nrAnnouncement.title|escape}</span>
-										{if $nrAnnouncement.date}<time class="nr_feature_date" datetime="{$nrAnnouncement.date|date_format:"%Y-%m-%d"}">{$nrAnnouncement.date|date_format:$dateFormatShort}</time>{/if}
+										{if $nrAnnouncement.date}<time class="nr_feature_date" datetime="{$nrAnnouncement.date|date_format:"Y-m-d"}">{$nrAnnouncement.date|date_format:$dateFormatShort}</time>{/if}
 										{if $nrAnnouncement.summary}<span class="nr_feature_summary">{$nrAnnouncement.summary|escape}</span>{/if}
 									</span>
 									<span class="nr_round_arrow fa fa-arrow-right" aria-hidden="true"></span>
 								</a>
 								{if !$smarty.foreach.nrAnn.last}<ul class="nr_ann_list">{/if}
 							{else}
-								<li><a href="{url page="announcement" op="view" path=$nrAnnouncement.id}"><span class="fa fa-bullhorn" aria-hidden="true"></span><span class="nr_ann_title">{$nrAnnouncement.title|escape}</span>{if $nrAnnouncement.date}<time datetime="{$nrAnnouncement.date|date_format:"%Y-%m-%d"}">{$nrAnnouncement.date|date_format:$dateFormatShort}</time>{/if}<span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+								<li><a href="{url page="announcement" op="view" path=$nrAnnouncement.id}"><span class="fa fa-bullhorn" aria-hidden="true"></span><span class="nr_ann_title">{$nrAnnouncement.title|escape}</span>{if $nrAnnouncement.date}<time datetime="{$nrAnnouncement.date|date_format:"Y-m-d"}">{$nrAnnouncement.date|date_format:$dateFormatShort}</time>{/if}<span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
 								{if $smarty.foreach.nrAnn.last}</ul>{/if}
 							{/if}
 						{/foreach}

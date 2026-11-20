@@ -54,3 +54,14 @@ Developed by Ikhwan Arief (ikhwan[at]unand.ac.id). Copyright (c) 2026 Ikhwan Ari
 - Firefox dan Safari belum diuji; pengujian keyboard dan pembaca layar baru sebatas pemeriksaan markup.
 - Plugin crossref/datacite tidak diaktifkan (tidak ada deposit eksternal); CRediT aktif tetapi data peran kontributor tidak diisi.
 - Log PHP berisi *deprecation* dan *notice* dari core OJS 3.5.
+
+## Pembaruan 2.0.1.0 — 20 November 2026
+
+Perbaikan performa halaman Archive untuk jurnal besar dan perbaikan format tanggal. Data tetap sintetis.
+
+| Uji | Hasil | Catatan |
+|---|---|---|
+| Kartu Archive sama dengan 2.0.0.0 | Lulus | Jumlah artikel dan rentang halaman identik pada data uji |
+| Jumlah query tidak bergantung pada jumlah artikel | Lulus | Uji beban sementara (3.000 artikel sintetis ditambahkan ke satu edisi, lalu dihapus): 2.0.0.0 5,2 detik dan 27.104 query; 2.0.1.0 0,06 detik dan 34 query. |
+| Format tanggal OJS 3.4+ | Lulus | Tanggal kartu Archive kini "June 2026" / "Juni 2026" (sebelumnya "%750 %2026"); atribut `datetime` pengumuman beranda valid (`2026-10-10`). |
+| `verify.sh` | Lulus | Isolasi multi-jurnal, Archive jurnal kedua HTTP 200, tanpa error PHP dari theme |

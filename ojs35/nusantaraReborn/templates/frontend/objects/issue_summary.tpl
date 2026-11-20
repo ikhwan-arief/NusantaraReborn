@@ -18,7 +18,7 @@
 	<div class="nr_issue_card_body">
 		<h3><a class="title" href="{$nrIssueUrl}">{if $issueTitle}{$issueTitle|escape}{else}{$issueSeries|escape}{/if}</a></h3>
 		{if $issueTitle && $issueSeries}<div class="series">{$issueSeries|escape}</div>{/if}
-		{if $issue->getDatePublished()}<div class="nr_issue_card_date">{$issue->getDatePublished()|date_format:"%B %Y"}</div>{/if}
+		{if $issue->getDatePublished()}<div class="nr_issue_card_date">{$issue->getDatePublished()|date_format:"F Y"}</div>{/if}
 		{if $issue->getLocalizedDescription()}<div class="description">{$issue->getLocalizedDescription()|strip_unsafe_html}</div>{/if}
 		{if $nrIssueStats && $nrIssueStats.articles}
 			<div class="nr_issue_card_stats">

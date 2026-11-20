@@ -56,3 +56,14 @@ Developed by Ikhwan Arief (ikhwan[at]unand.ac.id). Copyright (c) 2026 Ikhwan Ari
 - Plugin Gallery core mencoba mengunduh katalog dari pkp.sfu.ca (timeout di lingkungan uji); bukan bagian theme.
 - Upgrade 3.3 → 3.4 memerlukan penggabungan `config.inc.php` dengan template 3.4 dan `base_url` lama selama proses; sudah otomatis di fixture.
 - Firefox, Safari, dan pembaca layar belum diuji.
+
+## Pembaruan 3.0.1.0 — 20 November 2026
+
+Perbaikan performa halaman Archive untuk jurnal besar dan perbaikan format tanggal. Data tetap sintetis.
+
+| Uji | Hasil | Catatan |
+|---|---|---|
+| Kartu Archive sama dengan 3.0.0.0 | Lulus | Jumlah artikel dan rentang halaman identik pada data uji |
+| Jumlah query tidak bergantung pada jumlah artikel | Lulus | Query sama dengan jalur OJS 3.3 (publication_settings); uji beban dilakukan pada jalur 3.3 dan 3.5. |
+| Format tanggal OJS 3.4+ | Lulus | Tanggal kartu Archive kini "June 2026" / "Juni 2026" (sebelumnya "%750 %2026"); atribut `datetime` pengumuman beranda valid (`2026-10-10`). |
+| `verify.sh` | Lulus | Isolasi multi-jurnal, Archive jurnal kedua HTTP 200, tanpa error PHP dari theme |
