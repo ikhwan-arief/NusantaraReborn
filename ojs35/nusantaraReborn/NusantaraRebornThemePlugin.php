@@ -1051,6 +1051,7 @@ class NusantaraRebornThemePlugin extends ThemePlugin
             ? $this->cleanText($searchDescription, 300)
             : $this->cleanText($context->getLocalizedData('description') ?: $context->getLocalizedData('summary'), 300);
 
+        $templateMgr->addHeader('nrGeneratorTheme', '<meta name="generator-theme" content="NusantaraReborn">');
         $templateMgr->addHeader('nrOgSiteName', '<meta property="og:site_name" content="' . $this->html($journalName) . '">');
         $templateMgr->addHeader('nrOgLocale', '<meta property="og:locale" content="' . $this->html(Locale::getLocale()) . '">');
 
